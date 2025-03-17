@@ -13,7 +13,7 @@ const Galery = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 20000);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -30,7 +30,7 @@ const Galery = () => {
               src={image}
               className="d-block w-100 p-3"
               alt={`Animation ${index}`}
-              style={{ width: '100%', maxHeight: '700px' , objectFit: 'cover' }}
+              style={{ width: '1000px' , objectFit: 'cover' }}
             />
           </div>
         ))}
