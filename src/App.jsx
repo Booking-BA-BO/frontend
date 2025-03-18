@@ -1,9 +1,8 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-/* import Header from "./components/Header";
-import Galery from "./components/Galery";
-import Login from "./components/Login"; */
+import Header from "./components/Header";
+/* import Galery from "./components/Galery"; */
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import Register from "./pages/Auth/Register";
@@ -15,11 +14,12 @@ export default function App() {
   const { user } = useContext(AppContext);
 
   return (
+    
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={user ? <Home /> : <Register />} />
-
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={user ? <Home /> : <Login />} />
         </Route>

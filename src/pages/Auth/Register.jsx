@@ -4,7 +4,7 @@ import { AppContext } from "../../Context/AppContext";
 
 export default function Register() {
 
-    const {token, setToken} = useContext(AppContext);
+    const {setToken} = useContext(AppContext);
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ export default function Register() {
             localStorage.setItem('token', data.token);
             setToken(data.token);
             navigate('/');
-            console.log(data);
+            /* console.log(data); */
         }
 
     }
@@ -39,7 +39,7 @@ export default function Register() {
     return(
         <>
             <h1 className="title">Regisztrálj egy új felhasználót!</h1>
-            <form onSubmit={handleRegister} className="w-1/2 mx-auto space-y-6" action="">
+            <form onSubmit={handleRegister} className="w-1/2 mx-auto space-y-6">
                 <div>
                     <input type="text" placeholder="Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
                     {errors.title && <p className="error">{errors.name[0]}</p>}

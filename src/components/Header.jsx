@@ -7,7 +7,7 @@ const Header = () => {
         <div className='header-background'>
         <h1>BookIT</h1>
         </div>
-    </header>   
+    </header> 
   );
 };
 
