@@ -37,7 +37,7 @@ export default function Login() {
       <h1 className="title">Jelentkezz be!</h1>
       <form
         onSubmit={handleLogin}
-        className="w-1/2 mx-auto space-y-6"
+        className=""
       >
         <div>
           <input
@@ -64,6 +64,7 @@ export default function Login() {
        
 
         <button className="primary-btn">Login</button>
+        <p>Nincs még profilod?<a href="/register">Regisztrálj!</a></p>
       </form>
     </>
   );

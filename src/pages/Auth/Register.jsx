@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../Context/AppContext";
+import Galery from "../../components/Galery";
 
 export default function Register() {
 
@@ -38,8 +39,9 @@ export default function Register() {
 
     return(
         <>
+        <Galery />
             <h1 className="title">Regisztrálj egy új felhasználót!</h1>
-            <form onSubmit={handleRegister} className="w-1/2 mx-auto space-y-6">
+            <form onSubmit={handleRegister} className="">
                 <div>
                     <input type="text" placeholder="Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
                     {errors.title && <p className="error">{errors.name[0]}</p>}
@@ -57,6 +59,7 @@ export default function Register() {
                 </div>
 
                 <button className="primary-btn">Register</button>
+                <p>Van már profilod?<a href="/login">Jelentkezz be!</a></p>
             </form>
         </>
     );

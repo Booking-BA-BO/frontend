@@ -38,10 +38,10 @@ export default function Layout() {
                         <button className="nav-Link">Kijelentkezés</button>
                     </form>
                     </div>) : (
-                    <div>
-                        <Link to="/register" className="nav-link">Register</Link>
-                        <Link to="/login" className="nav-link">Login</Link>
-                    </div>)}
+                        <div className="d-flex gap-3">
+{/*                             <Link to="/register" className="btn btn-outline-primary">Register</Link>
+                            <Link to="/login" className="btn btn-outline-success">Login</Link> */}
+                        </div>)}
                 </nav>
             </header>
 

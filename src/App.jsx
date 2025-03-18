@@ -2,8 +2,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-/* import Galery from "./components/Galery"; */
-import Home from "./pages/Home";
+import Galery from "./components/Galery";
+import Cards from "./pages/Cards";
 import Layout from "./pages/Layout";
 import Register from "./pages/Auth/Register";
 import Login from "./pages/Auth/Login";
@@ -16,14 +16,17 @@ export default function App() {
   return (
     
     <BrowserRouter>
+    <div className=''>
       <Header />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={user ? <Home /> : <Register />} />
+          <Route index element={user ? <Cards /> : <Register />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={user ? <Home /> : <Login />} />
+          <Route path="/login" element={user ? <Cards /> : <Login />} />
         </Route>
       </Routes>
+{/*       <Galery /> */}
+      </div>
     </BrowserRouter>
   );
   /*   return (
