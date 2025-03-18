@@ -32,15 +32,12 @@ export default function Layout() {
         <>
             <header>
                 <nav>
-                    {/* <Link to="/" className="nav-link">Home</Link> */}
                     {user ? (<div><p>Üdvözöllek {user.name}</p>
                     <form onSubmit={handleLogout}>
                         <button className="nav-Link">Kijelentkezés</button>
                     </form>
                     </div>) : (
                         <div className="d-flex gap-3">
-{/*                             <Link to="/register" className="btn btn-outline-primary">Register</Link>
-                            <Link to="/login" className="btn btn-outline-success">Login</Link> */}
                         </div>)}
                 </nav>
             </header>

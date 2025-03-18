@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../../Context/AppContext";
-import Galery from "../../components/Galery";
+import { AppContext } from "../Context/AppContext";
 
 export default function Register() {
 
@@ -32,14 +31,12 @@ export default function Register() {
             localStorage.setItem('token', data.token);
             setToken(data.token);
             navigate('/');
-            /* console.log(data); */
         }
 
     }
 
     return(
         <>
-        <Galery />
             <h1 className="title">Regisztrálj egy új felhasználót!</h1>
             <form onSubmit={handleRegister} className="">
                 <div>

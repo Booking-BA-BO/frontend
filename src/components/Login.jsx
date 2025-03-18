@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../../Context/AppContext";
+import { AppContext } from "../Context/AppContext";
 
 export default function Login() {
   const { setToken } = useContext(AppContext);
@@ -28,7 +28,6 @@ export default function Login() {
       localStorage.setItem("token", data.token);
       setToken(data.token);
       navigate("/");
-      /* console.log(data); */
     }
   }
 
