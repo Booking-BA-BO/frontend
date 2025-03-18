@@ -11,7 +11,7 @@ export default function AppProvider({children}){
             headers: {
                 Authorization: `Bearer ${token}`
             }
-        })
+        });
 
         const data = await res.json();
 
@@ -22,11 +22,11 @@ export default function AppProvider({children}){
         /* console.log(data); */
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         if (token) {
             getUser();
-        } 
-    });
+        }
+    }, [token]); //Azért kell hogy ne fusson egy végtelen ciklus hanem null értéket kapjon a token kijelentkezés után.
 
     return(
         <AppContext.Provider value={{ token, setToken, user, setUser }}>
