@@ -1,27 +1,29 @@
-import React from 'react';
-import Galery from '../components/Galery';
-import Login from '../components/Login';
-import Header from '../components/Header';
+import React from "react";
+import Galery from "../components/Galery";
+import Login from "../components/Login";
 
 const Welcome = () => {
-    return(
-<>
-  <div>
-    <Header />
-  </div>
-  <div className="grid-container" style={{ display: 'flex', alignItems: 'stretch' }}>
-  <div className="galery" style={{ flex: 1 }}>
-    <Galery />
-  </div>
-  <div className="login" style={{ flex: 1 }}>
-    <Login />
-  </div>
-</div>
-</>
-
-
-
-    );
+  return (
+    <div
+      className="d-flex justify-content-between align-items-start"
+      style={{ minHeight: "100vh" }}
+    >
+      <div className="flex-grow-1">
+        <Galery />
+      </div>
+      <div
+        className="login-container"
+        style={{
+          width: "500px",
+          minWidth: "250px",
+          position: "sticky",
+          top: "20px",
+        }}
+      >
+        <Login />
+      </div>
+    </div>
+  );
 };
 
 export default Welcome;

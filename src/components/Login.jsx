@@ -33,7 +33,7 @@ export default function Login() {
 
   return (
     <>
-  <div className="container d-flex justify-content-center align-items-center min-vh-100">
+  <div className="container d-flex justify-content-center align-items-center min-vh-100" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
     <div className="card shadow-sm" style={{ width: '100%', maxWidth: '400px' }}>
       <div className="card-body">
         <h1 className="card-title text-center mb-4">Jelentkezz be!</h1>
@@ -72,6 +72,5 @@ export default function Login() {
     </div>
   </div>
 </>
-
   );
 }

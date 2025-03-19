@@ -16,7 +16,7 @@ const Gallery = () => {
     }, 2000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [images.length]);
 
   const styles = {
     carouselImage: {
