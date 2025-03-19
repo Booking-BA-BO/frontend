@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Galery = () => {
+const Gallery = () => {
   const images = [
     '/images/v1.jpg',
     '/images/v2.jpg',
@@ -18,6 +18,15 @@ const Galery = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const styles = {
+    carouselImage: {
+      width: '100%',
+      margin: '100px',
+      padding: '50px',
+      maxWidth: '750px'
+    },
+  };
+
   return (
     <div className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
@@ -29,6 +38,7 @@ const Galery = () => {
             <img
               src={image}
               alt={`Animation ${index}`}
+              style={styles.carouselImage}
             />
           </div>
         ))}
@@ -37,4 +47,4 @@ const Galery = () => {
   );
 };
 
-export default Galery;
+export default Gallery;

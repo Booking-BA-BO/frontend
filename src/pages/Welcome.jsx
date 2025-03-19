@@ -9,14 +9,14 @@ const Welcome = () => {
   <div>
     <Header />
   </div>
-  <div className="grid-container">
-    <div className="galery">
-      <Galery />
-    </div>
-    <div className="login">
-      <Login />
-    </div>
+  <div className="grid-container" style={{ display: 'flex', alignItems: 'stretch' }}>
+  <div className="galery" style={{ flex: 1 }}>
+    <Galery />
   </div>
+  <div className="login" style={{ flex: 1 }}>
+    <Login />
+  </div>
+</div>
 </>
 
 
