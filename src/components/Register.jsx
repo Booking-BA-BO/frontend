@@ -90,7 +90,7 @@ export default function Register() {
             />
           </div>
 
-          <button className="btn btn-primary w-100">Register</button>
+          <button className="btn btn-primary w-100">Regisztrálj!</button>
         </form>
         <p className="text-center mt-3">
           Van már profilod? <a href="/login">Jelentkezz be!</a>

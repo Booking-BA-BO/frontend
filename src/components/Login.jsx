@@ -63,7 +63,7 @@ export default function Login() {
             {errors.password && <p className="text-danger">{errors.password[0]}</p>}
           </div>
 
-          <button className="btn btn-primary w-100">Login</button>
+          <button className="btn btn-primary w-100">Jelentkezz Be!</button>
         </form>
         <p className="text-center mt-3">
           Nincs még profilod? <a href="/register">Regisztrálj!</a>

@@ -10,10 +10,10 @@ const WelcomeRegister = () => {
     <Header />
   </div>
   <div className="d-flex justify-content-between">
-    <div className="w-50 pe-3">
+    <div>
       <Galery />
     </div>
-    <div className="w-50 ps-3">
+    <div>
       <Register />
     </div>
   </div>
