@@ -36,28 +36,69 @@ export default function Register() {
     }
 
     return(
-        <>
-            <h1 className="title">Regisztrálj egy új felhasználót!</h1>
-            <form onSubmit={handleRegister} className="">
-                <div>
-                    <input type="text" placeholder="Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
-                    {errors.title && <p className="error">{errors.name[0]}</p>}
-                </div>
-                <div>
-                    <input type="text" placeholder="Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}/>
-                    {errors.title && <p className="error">{errors.email[0]}</p>}
-                </div>
-                <div>
-                    <input type="password" placeholder="password" value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
-                    {errors.title && <p className="error">{errors.password[0]}</p>}
-                </div>
-                <div>
-                    <input type="password" placeholder="password_confirmation" value={formData.password_confirmation} onChange={(e) => setFormData({...formData, password_confirmation: e.target.value})}/>
-                </div>
+<>
+  <div className="container d-flex justify-content-center align-items-center min-vh-100">
+    <div className="card shadow-sm" style={{ width: '100%', maxWidth: '400px' }}>
+      <div className="card-body">
+        <h1 className="card-title text-center mb-4">Regisztrálj egy új felhasználót!</h1>
+        <form onSubmit={handleRegister}>
+          <div className="mb-3">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Name"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+            />
+            {errors.name && <p className="text-danger">{errors.name[0]}</p>}
+          </div>
+          <div className="mb-3">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+            />
+            {errors.email && <p className="text-danger">{errors.email[0]}</p>}
+          </div>
+          <div className="mb-3">
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Password"
+              value={formData.password}
+              onChange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
+            />
+            {errors.password && <p className="text-danger">{errors.password[0]}</p>}
+          </div>
+          <div className="mb-3">
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Password Confirmation"
+              value={formData.password_confirmation}
+              onChange={(e) =>
+                setFormData({ ...formData, password_confirmation: e.target.value })
+              }
+            />
+          </div>
 
-                <button className="primary-btn">Register</button>
-                <p>Van már profilod?<a href="/login">Jelentkezz be!</a></p>
-            </form>
-        </>
+          <button className="btn btn-primary w-100">Register</button>
+        </form>
+        <p className="text-center mt-3">
+          Van már profilod? <a href="/login">Jelentkezz be!</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</>
+
     );
 }

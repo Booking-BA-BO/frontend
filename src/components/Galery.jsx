@@ -28,9 +28,7 @@ const Galery = () => {
           >
             <img
               src={image}
-              className="d-block w-50 p-3"
               alt={`Animation ${index}`}
-              style={{ width: '100px' , objectFit: 'cover' }}
             />
           </div>
         ))}

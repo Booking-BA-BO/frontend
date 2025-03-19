@@ -5,19 +5,22 @@ import Header from '../components/Header';
 
 const Welcome = () => {
     return(
-        <>
-            <div>
-                <Header />
-            </div>        
-            <div>
-                <div>
-                    <Galery/>
-                </div>
-                <div>
-                    <Login/>
-                </div>
-            </div>
-        </>
+<>
+  <div>
+    <Header />
+  </div>
+  <div className="grid-container">
+    <div className="galery">
+      <Galery />
+    </div>
+    <div className="login">
+      <Login />
+    </div>
+  </div>
+</>
+
+
+
     );
 };
 

@@ -37,7 +37,7 @@ export default function Layout() {
                         <button className="nav-Link">Kijelentkezés</button>
                     </form>
                     </div>) : (
-                        <div className="d-flex gap-3">
+                        <div>
                         </div>)}
                 </nav>
             </header>
