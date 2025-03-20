@@ -1,25 +1,15 @@
 import React from "react";
 import Galery from "../components/Galery";
 import Register from "../components/Register";
+import "../style/Welcome.css";
 
 const WelcomeRegister = () => {
   return (
-    <div
-      className="d-flex justify-content-between align-items-start"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="flex-grow-1">
+    <div className="welcomeR">
+      <div className="galeria ">
         <Galery />
       </div>
-      <div
-        className="register-container"
-        style={{
-          width: "500px",
-          minWidth: "250px",
-          position: "sticky",
-          top: "20px",
-        }}
-      >
+      <div className="register">
         <Register />
       </div>
     </div>

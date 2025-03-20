@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/Header.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = () => {
