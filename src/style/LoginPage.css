@@ -1,20 +1,55 @@
-.login-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-card{
-    background-color: white;
-    display: flex;
-    width: 80%;
-    margin: 50px;   
+.login-card {
+  background-color: white;
+  display: flex;
+  width: 80%;
+  margin: 50px;
 }
 
-.login-card > .left-section{
-    flex-basis: 50%;
+.login-card > .left-section {
+  flex-basis: 50%;
+  background-color: aqua;
 }
 
-.login-card > .right-section{
-    flex-basis: 50%;
+.login-card > .right-section {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card > .right-section > h1,
+p {
+  text-align: center;
+}
+
+.login-input {
+  width: 90%;
+}
+
+.login-card > .right-section > form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.login-card > .right-section > form > .login-button {
+  width: 40%;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(129, 191, 183);
+  color: rgb(240, 249, 248);
+}
+
+.login-header {
 }
