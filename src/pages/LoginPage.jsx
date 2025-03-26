@@ -5,18 +5,18 @@ import "../style/LoginPage.css";
 
 const LoginPage = () => {
   return (
-<main>
-  <div className="login-container">
-    <div className="login-card">
-      <div className="left-section">
-        <p>ez a bal</p>
+    <main>
+      <div className="login-container">
+        <div className="login-card">
+          <div className="left-section">
+            <img className="kep" src="https://placehold.co/400x500" alt="a" />
+          </div>
+          <div className="right-section">
+            <Login />
+          </div>
+        </div>
       </div>
-      <div className="right-section">
-        <Login/>
-      </div>
-    </div>
-  </div>
-</main>
+    </main>
   );
 };
 

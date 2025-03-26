@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../Context/AppContext";
-import "../style/Login.css";
 
 export default function Login() {
   const { setToken } = useContext(AppContext);
@@ -41,19 +40,24 @@ export default function Login() {
         </p>
       </div>
       <form onSubmit={handleLogin}>
+        <div className="label">
+          <p>Email</p>
+        </div>
         <input
           className="login-input"
           type="text"
-          placeholder="Email"
+          placeholder="email@mail.com"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
         {errors.email && <p>{errors.email[0]}</p>}
-
+        <div className="label">
+          <p>Jelszó</p>
+        </div>
         <input
           className="login-input"
           type="password"
-          placeholder="Password"
+          placeholder="********"
           value={formData.password}
           onChange={(e) =>
             setFormData({ ...formData, password: e.target.value })
