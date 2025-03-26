@@ -1,13 +1,23 @@
 import React from 'react';
-import '../style/Header.css'
+import '../style/Header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = () => {
   return (
     <header className="header">
-        <div className='header-background'>
+      <div className='header-background'>
+        <div className='headerLeft'>
         <h1>BookIT</h1>
         </div>
+        <div className='headerMid'>
+        <a href="#"><h5>Felfedezés</h5></a>
+        <a href="#"><h5>Kontakt</h5></a>
+        <a href="#"><h5>FAQs</h5></a>
+        </div>
+        <div className='headerRight'>
+        <a href="/login" className='login'><h5>Bejelentkezés</h5></a>
+        </div>
+      </div>
     </header> 
   );
 };

@@ -1,77 +1,16 @@
-.galeria {
-    grid-area: galeria;
-}
-
-.login, .register {
-    width: 500px;
-    top: 20px;
-}
-
-.login{
-    grid-area: login;
-}
-
-.register {
-    grid-area: register;
-}
-
-
-
-.welcomeL {
-    min-height: 100vh;
-    display: grid;
-    grid-template:
-        'galeria login'
-        'galeria login';
-    gap: 10px;
-    background-color: white;
-    padding: 10px;
-}
-
-.welcomeR {
-    min-height: 100vh;
-    display: grid;
-    grid-template:
-        'galeria register'
-        'galeria register';
-    gap: 10px;
-    background-color: white;
-    padding: 10px;
-}
-
-@media (max-width: 1200px) {
-    .welcomeL {
-        grid-template:
-            'login'
-            'galeria';       
-    }
-
-    .login {
-        width: 100%;            
-        max-width: 500px;       
-        margin: 0 auto;        
-    }
-}
-
-@media (max-width: 1200px) {
-    .welcomeR {
-        grid-template:
-            'register'
-            'galeria';       
-    }
-
-    .register {
-        width: 100%;            
-        max-width: 500px;       
-        margin: 0 auto;        
-    }
-}
-
-@media (max-width: 1200px) {
-    .galeria {
-        width: 100%;            
-        max-width: 700px;       
-        margin: 0 auto;  
-        padding: 0;      
-    }
-}
+.welcome-container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .left-section {
+    width: 60%;
+    padding: 20px;
+  }
+  
+  .right-section {
+    width: 40%;
+    padding: 20px;
+  }
+  

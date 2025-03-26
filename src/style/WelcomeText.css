@@ -1,0 +1,31 @@
+.introductionText{
+    padding: 20px;
+}
+
+.introductionText>h1{
+    font-weight: bold;
+    font-size: 80px;
+}
+
+.introductionText>h6{
+    padding-top: 40px;
+}
+
+.buttonsIntroduction{
+    padding-top: 30px;
+}
+
+.buttonsIntroduction>a{
+    margin-right: 20px;
+    padding: 10px 30px;
+    background-color: black;
+    color: rgb(240, 249, 248);
+    margin-bottom: 100px;
+    text-decoration: none;
+}
+
+.introductionText>div>h3{
+    border-top: 1px solid black;
+    margin-top: 20px;
+    padding-top: 20px;
+}

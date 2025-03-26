@@ -1,0 +1,20 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card{
+    background-color: white;
+    display: flex;
+    width: 80%;
+    margin: 50px;   
+}
+
+.login-card > .left-section{
+    flex-basis: 50%;
+}
+
+.login-card > .right-section{
+    flex-basis: 50%;
+}
