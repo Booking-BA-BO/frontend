@@ -33,7 +33,7 @@
   width: 90%;
 }
 
-form{
+.formElem{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@ form{
   color: rgb(240, 249, 248);
 }
 
-a{
+.regisztraciosGomb{
   color: rgb(129, 191, 183); 
 }
 

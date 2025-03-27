@@ -41,7 +41,7 @@ export default function Register() {
           Van már profilod? <a href="/login">Jelentkezz be!</a>
         </p>
         </div>
-        <form onSubmit={handleRegister}>
+        <form  className="formElem" onSubmit={handleRegister}>
           <div className="label">
             <p>Név</p>
           </div>

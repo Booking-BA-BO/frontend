@@ -15,7 +15,7 @@ export default function Layout() {
                 Authorization: `Bearer ${token}`,
             },
         });
-
+                                                        //Átszervezni komponensbe
         const data = await res.json();
         console.log(data);
 
@@ -31,7 +31,16 @@ export default function Layout() {
     return(
         <>
             <header>
-            
+                <nav>
+                    {user ? (<div><p>Üdvözöllek {user.name}</p>
+                    <form onSubmit={handleLogout}>  
+                        <button className="kijelentkezesGomb">Kijelentkezés</button>
+                    </form>
+                    </div>) : (
+                        <div>
+                            
+                        </div>)}
+                </nav>
             </header>
 
             <main>

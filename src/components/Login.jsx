@@ -36,10 +36,10 @@ export default function Login() {
       <div className="login-header">
         <h1>Jelentkezz be!</h1>
         <p>
-          Nincs még profilod? <a href="/register">Regisztrálj!</a>
+          Nincs még profilod? <a class="regisztraciosGomb" href="/register">Regisztrálj!</a>
         </p>
       </div>
-      <form onSubmit={handleLogin}>
+      <form className="formElem" onSubmit={handleLogin}>
         <div className="label">
           <p>Email</p>
         </div>

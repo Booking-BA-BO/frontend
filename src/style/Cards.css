@@ -1,0 +1,18 @@
+.kartyak{
+    display: flex;
+    margin: 50px;
+    justify-content:  center;
+    max-width: 5000px;
+}
+
+.cimEsNav{
+    display: flex;
+    justify-content:  space-between;
+    margin: 25px;
+    align-items: center;
+}
+
+.cimEsNav a{
+    color: black;
+
+}
