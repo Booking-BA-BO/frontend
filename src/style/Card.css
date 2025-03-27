@@ -2,11 +2,13 @@
   width: 260px;
   height: 260px;
   border-radius: 20px;
-  background: #ffd3dd;
+  background: #f3a2be;
   padding: 1.8rem;
   border: 2px solid #c3c6ce;
   transition: 0.5s ease-out;
   margin: 30px;
+  min-width: 200px;
+  min-height: 200px;
  }
 
  .card:hover {

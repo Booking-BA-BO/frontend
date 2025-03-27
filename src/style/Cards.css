@@ -1,14 +1,13 @@
 .kartyak{
     display: flex;
-    margin: 50px;
     justify-content:  center;
-    max-width: 5000px;
 }
 
 .cimEsNav{
+    margin-top: 25px;
+    padding-top: 25px;
     display: flex;
-    justify-content:  space-between;
-    margin: 25px;
+    justify-content:  space-around;
     align-items: center;
 }
 
@@ -16,3 +15,10 @@
     color: black;
 
 }
+
+@media (max-width: 1100px) {
+    .kartyak{
+        flex-wrap: wrap;
+    }
+  } 
+
