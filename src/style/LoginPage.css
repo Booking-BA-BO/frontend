@@ -33,14 +33,13 @@
   width: 90%;
 }
 
-.formElem{
+.formElem {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
 }
-
 
 .login-button {
   width: 40%;
@@ -51,26 +50,22 @@
   color: rgb(240, 249, 248);
 }
 
-.login-header {
-}
-
-
-.btn{
+.btn {
   background-color: rgb(129, 191, 183);
   color: rgb(240, 249, 248);
 }
 
-.regisztraciosGomb{
-  color: rgb(129, 191, 183); 
+.regisztraciosGomb {
+  color: rgb(129, 191, 183);
 }
 
-.login-input{
+.login-input {
   border: none;
   border-bottom: 1px solid black;
   background-color: transparent;
 }
 
-.login-input:focus{
+.login-input:focus {
   outline: none;
 }
 
@@ -81,11 +76,11 @@ form .label {
   margin: 0px;
 }
 
-.left-section .kep{
+.left-section .kep {
   width: 100%;
   height: 100%;
 }
 
-form div.label p{
+form div.label p {
   margin: 0;
 }

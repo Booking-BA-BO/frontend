@@ -1,24 +1,46 @@
-.kartyak{
-    display: flex;
-    justify-content:  center;
+.kartyak {
+  display: flex;
+  justify-content: center;
 }
 
-.cimEsNav{
-    margin-top: 25px;
-    padding-top: 25px;
-    display: flex;
-    justify-content:  space-around;
-    align-items: center;
+.cimEsNav {
+  margin-top: 25px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.cimEsNav a{
-    color: black;
-
+.cimEsNav a {
+  color: black;
 }
 
 @media (max-width: 1100px) {
-    .kartyak{
-        flex-wrap: wrap;
-    }
-  } 
+  .kartyak {
+    flex-wrap: wrap;
+  }
+}
 
+.close-new-form {
+  background-color: white;
+  border: none;
+  font-size: large;
+  color: grey;
+}
+
+.whole-form-container {
+  display: flex;
+  gap: 20px;
+}
+
+.left-container {
+  flex: 50%;
+}
+
+.right-container {
+  flex: 50%;
+}
+
+.submit-button {
+  margin: 10px 0px;
+}

@@ -1,16 +1,16 @@
 .welcome-container {
-    display: flex;
-    width: 80%;
-    margin: auto;
-  }
-  
-  .left-section {
-    width: 60%;
-    padding: 20px;
-  }
-  
-  .right-section {
-    width: 40%;
-    padding: 20px;
-  }
-  
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.left-section {
+  width: 60%;
+  padding: 20px;
+}
+
+.right-section {
+  width: 40%;
+  padding: 20px;
+  text-align: right;
+}

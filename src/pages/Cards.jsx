@@ -1,10 +1,26 @@
 import CardComponent from "../components/CardComponent.jsx";
+import HelloHeader from "../components/HelloHeader.jsx";
 import "../style/Cards.css";
 import "../style/Card.css";
+import "../style/Popup.css";
+import { useState } from "react";
+import NewForm from "../components/NewForm.jsx";
 
 export default function Cards() {
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
+  const showPopup = () => {
+    setPopupVisible(true);
+  };
+
+  const closePopup = () => {
+    setPopupVisible(false);
+  };
   return (
     <>
+      <div>
+        <HelloHeader />
+      </div>
       <div className="content">
         <div className="cimEsNav">
           <h1>Munkáim</h1>
@@ -17,7 +33,24 @@ export default function Cards() {
           <CardComponent />
           <CardComponent />
           <div class="card">
-            <button class="plus">+</button>
+            <div>
+              <button class="plus" onClick={showPopup}>
+                +
+              </button>
+              {isPopupVisible && (
+                <>
+                  <div className="overlay active" onClick={closePopup}></div>
+                  <div className="popup">
+                    <button className="close-new-form" onClick={closePopup}>
+                      x
+                    </button>
+                    <div>
+                      <NewForm />
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
