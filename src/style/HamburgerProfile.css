@@ -26,6 +26,7 @@
   }
   
   .menu a:hover {
-    background: #f0f0f0;
+    background: #ffd3dd;
+    border-radius: 8px;
   }
   

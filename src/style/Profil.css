@@ -1,0 +1,51 @@
+.kulso{
+    border: 2px solid black;
+    border-radius: 8px;
+    max-width: 1400px;  
+    margin: auto;
+}
+
+.kozepso{
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 8px;
+    display: flex;
+}
+
+.belso{
+        border: 2px solid black;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 1100px;
+        margin: auto;
+}
+
+.esemenyek{
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 50px;
+}
+
+.esemenyDobozok{
+    display: flex;
+    margin: 50px;
+}
+
+.esemeny{
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 120px;
+    height: 120px;
+    margin: 50px;
+    margin: auto;
+}
+
+.felsoSzoveg{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigacio{
+    display: flex;
+    align-items: center;
+}

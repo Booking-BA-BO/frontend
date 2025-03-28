@@ -11,6 +11,7 @@ import Welcome from "./pages/Welcome";
 import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
+import Profil from "./pages/Profil";
 
 export default function App() {
   const { user } = useContext(AppContext);
@@ -23,6 +24,7 @@ export default function App() {
           <Route index element={user ? <Cards /> : <Welcome />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={user ? <LoginPage /> : <LoginPage />} />
+          <Route path="/profil" element={<Profil />} />
         </Route>
       </Routes>
       <Footer />
