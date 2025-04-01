@@ -18,15 +18,13 @@ export default function AppProvider({children}){
         if(res.ok) {
             setUser(data);
         }
-
-        /* console.log(data); */
     }
 
     useEffect(() => {
         if (token) {
             getUser();
         }
-    }, [token]); //Azért kell hogy ne fusson egy végtelen ciklus hanem null értéket kapjon a token kijelentkezés után.
+    }, [token]);
 
     return(
         <AppContext.Provider value={{ token, setToken, user, setUser }}>

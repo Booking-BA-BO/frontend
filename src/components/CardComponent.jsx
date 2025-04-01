@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/Card.css";
 
 const CardComponent = () => {
+  const adat = useContext(AppContext);
+
   return (
       <div class="card">
         <div class="card-details">
