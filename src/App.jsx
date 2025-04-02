@@ -12,12 +12,13 @@ import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import Profil from "./pages/Profil";
+import { ApiProvider } from "./Context/ApiContext";
 
 export default function App() {
   const { user } = useContext(AppContext);
 
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -28,6 +29,6 @@ export default function App() {
         </Route>
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
