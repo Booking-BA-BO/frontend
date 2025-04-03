@@ -59,11 +59,13 @@ const NewForm = () => {
             </div>
             <div className="mb-3">
               <label htmlFor="leiras" className="form-label">Leírás:</label>
-              <textarea id="leiras" name="leiras" className="form-control" value={formData.leiras} onChange={handleChange} placeholder="Adj meg egy leírást!" />
+              <textarea id="leiras" name="leiras" className="form-control text-area" value={formData.leiras} onChange={handleChange} placeholder="Adj meg egy leírást!" />
               {errors.leiras && <p className="error">{errors.leiras}</p>}
             </div>
             <div className="mb-3">
               <label htmlFor="hely" className="form-label">Hely:</label>
+              <div className="information">&#9432;</div> 
+              <div className="hide">Hogyha ez egy online esemény, ide rakhatod a meeting linket</div>
               <input type="text" id="hely" name="hely" className="form-control" value={formData.hely} onChange={handleChange} placeholder="Add meg a helyet!" />
               {errors.hely && <p className="error">{errors.hely}</p>}
             </div>
@@ -80,13 +82,17 @@ const NewForm = () => {
               {errors.ar && <p className="error">{errors.ar}</p>}
             </div>
             <div className="mb-3">
-              <label htmlFor="foglalastol" className="form-label">Foglalás kezdete:</label>
-              <input type="number" id="foglalastol" name="foglalastol" className="form-control" value={formData.foglalastol} onChange={handleChange} placeholder="Kezdő dátum" />
+              <label htmlFor="foglalastol" className="form-label">Foglalás kezdete (ennyi nappal előtte):</label>
+              <div className="information">&#9432;</div> 
+              <div className="hide">Tehát, ha 90 napot adsz meg, akkor az esemény megrendezési dátuma előtti 90 naptól lehet majd jegyet foglalni. </div>
+              <input type="number" id="foglalastol" name="foglalastol" className="form-control" value={formData.foglalastol} onChange={handleChange} placeholder="pl: 90" />
               {errors.foglalastol && <p className="error">{errors.foglalastol}</p>}
             </div>
             <div className="mb-3">
-              <label htmlFor="foglalasig" className="form-label">Foglalás vége:</label>
-              <input type="number" id="foglalasig" name="foglalasig" className="form-control" value={formData.foglalasig} onChange={handleChange} placeholder="Vég dátum" />
+              <label htmlFor="foglalasig" className="form-label">Foglalás vége (ennyi nappal előtte):</label>
+              <div className="information">&#9432;</div> 
+              <div className="hide">Tehát, ha 1 napot adsz meg, akkor az esemény megrendezési dátuma előtti 1 napig lehet majd jegyet foglalni. </div>
+              <input type="number" id="foglalasig" name="foglalasig" className="form-control" value={formData.foglalasig} onChange={handleChange} placeholder="pl: 1" />
               {errors.foglalasig && <p className="error">{errors.foglalasig}</p>}
             </div>
           </div>

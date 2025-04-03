@@ -5,56 +5,28 @@ function Profil() {
   return (
     <>
       <div className="kulso">
-        <h1>Név / Logo</h1>
         <div className="kozepso">
-          <nav className="navigacio">
+          <nav className="profil-navigacio">
             <ul>
               <li>
-                <a href="">Opcio</a>
+                <a href="">Profilom szerkesztése</a>
               </li>
               <li>
-                <a href="">Opcio</a>
+                <a href="">Minden eseményem</a>
               </li>
               <li>
-                <a href="">Opcio</a>
+                <a href="">Statisztika</a>
               </li>
               <li>
-                <a href="">Opcio</a>
+                <a href="">Beállítások</a>
               </li>
             </ul>
           </nav>
+          
           <div className="belso">
-            <div className="esemenyek">
-              <div className="felsoSzoveg">
-                <h4>Események</h4>
-                <p>
-                  <a href="#">Továbbiak</a>
-                </p>
-              </div>
-              <div className="esemenyDobozok">
-                <div className="esemeny">EseményDoboz</div>
-                <div className="esemeny">EseményDoboz</div>
-                <div className="esemeny">EseményDoboz</div>
-              </div>
-            </div>
-
-            <div className="esemenyek">
-              <div className="felsoSzoveg">
-                <h4>Események</h4>
-                <p>
-                  <a href="#">Továbbiak</a>
-                </p>
-              </div>
-              <div className="esemenyDobozok">
-                <div className="esemeny">EseményDoboz</div>
-                <div className="esemeny">EseményDoboz</div>
-                <div className="esemeny">EseményDoboz</div>
-              </div>
-            </div>
+          
           </div>
-{/*           <h6>Kijelentkezés</h6> */}
         </div>
-
       </div>
     </>
   );
