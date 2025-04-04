@@ -13,10 +13,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import Profil from "./pages/Profil";
 import { ApiProvider } from "./Context/ApiContext";
+import "./style/Profil.css";
+import ModifyPage from "./pages/ModifyPage";
+import AllEvents from "./pages/AllEventsPage";
+import ReservationPage from "./pages/ReservationPage";
 
 export default function App() {
   const { user } = useContext(AppContext);
-
   return (
     <>
       <Header />
@@ -25,7 +28,10 @@ export default function App() {
           <Route index element={user ? <Cards /> : <Welcome />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={user ? <LoginPage /> : <LoginPage />} />
-          <Route path="/profil" element={<Profil />} />
+          <Route path="/profile" element={<Profil />} />
+          <Route path="/profile/modify" element={<ModifyPage />} />
+          <Route path="/profile/events" element={<AllEvents />} />
+          <Route path="/:endpoint" element={<ReservationPage />} />
         </Route>
       </Routes>
       <Footer />

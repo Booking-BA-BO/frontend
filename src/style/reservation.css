@@ -1,0 +1,13 @@
+.reservation-container{
+    margin: auto;
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.reservation-container > h1 {
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+}

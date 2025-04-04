@@ -3,7 +3,7 @@ import HelloHeader from "../components/HelloHeader.jsx";
 import "../style/Cards.css";
 import "../style/Card.css";
 import "../style/Popup.css";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import NewForm from "../components/NewForm.jsx";
 import useApiContext, { ApiContext } from "../Context/ApiContext.jsx";
 import { AppContext } from "../Context/AppContext.jsx";
@@ -11,7 +11,6 @@ import { AppContext } from "../Context/AppContext.jsx";
 export default function Cards() {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const { esemenyek } = useApiContext();
-  const { user } = useContext(AppContext);
 
   const showPopup = () => {
     setPopupVisible(true);

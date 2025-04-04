@@ -6,9 +6,8 @@ export const ApiContext = createContext("");
 
 export const ApiProvider = ({ children }) => {
     const { user } = useContext(AppContext);
-
     const [esemenyek, setEsemenyek] = useState([]);
-    const [datumok, setDatumok] = useState([]);
+    //const [datumok, setDatumok] = useState([]);
 
     const getAdat = async (vegpont, asyFgv) => {
       try {
@@ -24,12 +23,12 @@ export const ApiProvider = ({ children }) => {
       if(user?.id){
         getAdat(`/api/topevents/${user?.id}`, setEsemenyek);
     }
-        getAdat(`/api/all-event-dates/6`, setDatumok);
+
     }, [user?.id]);
   
   
     return (
-      <ApiContext.Provider value={{ esemenyek , datumok }}>
+      <ApiContext.Provider value={{ esemenyek }}>
         {children}
       </ApiContext.Provider>
     );

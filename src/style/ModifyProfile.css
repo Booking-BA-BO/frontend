@@ -1,0 +1,70 @@
+.profiladatok{
+    width: auto;
+    margin: 20px 40px;
+    height: 550px;
+    overflow-y: scroll;
+    scrollbar-width: 0px;
+}
+
+.profiladatok::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .profiladatok {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+.profiladatok > h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.profil-szerkesztes > h6 {
+    border-top: 1px solid rgb(228, 228, 228);
+    margin: 20px 0;
+    font-weight: bold;
+    color: rgb(165, 165, 165);
+}
+
+.profil-szerkesztes > p {
+    padding: 10px;
+}
+
+.modify-gomb{
+    float: right;
+    border: none;
+    background-color: white;
+}
+
+.jelszo-valtoztatas-div{
+    border: 1px solid rgb(129, 191, 183);
+    background-color: rgb(240, 249, 248);
+    border-radius: 5px;
+    width: 600px;
+    margin: 20px auto;
+    padding: 10px 20px;
+}
+
+.jelszo-valtoztatas-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.jelszo-valtoztatas-form > div > label, input{
+    margin: 10px 0px;
+}
+
+.jelszo-valtoztatas-form > div > input {
+    width: auto;
+}
+
+.jelszo-valtoztatas-gomb{
+    width: 30%;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(129, 191, 183);
+    color: rgb(240, 249, 248);
+}
