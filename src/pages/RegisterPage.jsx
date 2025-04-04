@@ -9,7 +9,7 @@ const RegisterPage = () => {
       <div className="login-container">
         <div className="login-card">
           <div className="left-section">
-            <img className="kep" src="https://placehold.co/400x500" alt="a" />
+          <img className="kep" src="../../public/photos/login.jpg" alt="login" />
           </div>
           <div className="right-section">
             <Register />

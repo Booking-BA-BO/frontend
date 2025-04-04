@@ -17,12 +17,13 @@ import "./style/Profil.css";
 import ModifyPage from "./pages/ModifyPage";
 import AllEvents from "./pages/AllEventsPage";
 import ReservationPage from "./pages/ReservationPage";
+import HeaderNoAuth from "./components/HeaderNoAuth";
 
 export default function App() {
   const { user } = useContext(AppContext);
   return (
     <>
-      <Header />
+      {user ? <Header /> : <HeaderNoAuth />}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={user ? <Cards /> : <Welcome />} />

@@ -29,3 +29,14 @@
     margin-top: 20px;
     padding-top: 20px;
 }
+
+.kepek-div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.kepek-div >img {
+    max-width: 160px;
+    border: 2px solid black;
+}

@@ -12,7 +12,12 @@ const WelcomeText = () => {
         </div>
         <div>
             <h3>Funkciók:</h3>
-            <p>ide jönnek a funkciók, oldalra egymás mellé négy kép, visz. kicsik</p>
+            <div className="kepek-div">
+              <img src="../../public/photos/effective.jpg" alt="effective" />
+              <img src="../../public/photos/exportable.jpg" alt="exportable" />
+              <img src="../../public/photos/managable.jpg" alt="managable" />
+              <img src="../../public/photos/integratable.jpg" alt="integratable" />
+            </div>
         </div>
     </div>
   );

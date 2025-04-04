@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "../style/Profil.css";
+import { AppContext } from '../Context/AppContext';
 
 function ProfilNavigation() {
+  const { user } = useContext(AppContext);
+  console.log(user)
   return (
     <nav className="profil-navigacio">
     <ul>
-      <div><h1>Név</h1></div>
+      <div><h1>{user?.name}</h1></div>
       <li className="passive">
         <a href="/profile/modify">Profilom szerkesztése</a>
       </li>

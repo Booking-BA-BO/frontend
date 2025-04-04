@@ -6,8 +6,73 @@
     border-radius: 10px;
 }
 
-.reservation-container > h1 {
+.reservation-container > h1, h2 {
     text-align: center;
     margin: 20px;
     padding: 5px;
+}
+
+
+.reservation-form-div{
+    border: 1px solid rgb(129, 191, 183);
+    background-color: rgb(240, 249, 248);
+    border-radius: 5px;
+    width: 600px;
+    margin: 20px auto;
+    padding: 10px 20px;
+}
+
+.reservation-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.reservation-form > label, input{
+    margin: 10px 0px;
+}
+
+.reservation-form   > input {
+    width: auto;
+}
+
+.reservation-form-button{
+    width: 40%;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(129, 191, 183);
+    color: rgb(240, 249, 248);
+}
+
+.reservation-options-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 80%;
+    margin: auto;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.reservation-option-card{
+    border-radius: 10px;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    margin: 20px;
+    padding: 20px;
+}
+
+.reservation-option-card > h5 {
+    color: black;
+    padding: 0;
+}
+
+.reservation-right-button{
+    float: right;
+    border: none;
+    background-color: white;
+}
+
+.date-time-picker-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 80%;
+    margin: auto;
 }

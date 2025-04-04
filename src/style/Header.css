@@ -18,14 +18,19 @@
 }
 
 .headerMid {
-  flex: 6;
   display: flex;
+  flex: 6;
   justify-content: center;
 }
 
 .headerRight {
-/*   flex: 2; */
+  flex: 2;
   text-align: right;
+}
+
+.header-hamburger{
+  text-align: right;
+  float: right;
 }
 
 
@@ -54,4 +59,8 @@ a{
   color: rgb(240, 249, 248);
   text-decoration: none;
   float: right;
+}
+
+h1 > .logo {
+  color: white;
 }
