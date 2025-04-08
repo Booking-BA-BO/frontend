@@ -10,7 +10,7 @@ const Welcome = () => {
           <WelcomeText />
         </div>
         <div className="right-section-main">
-            <img src="https://placehold.co/500x500" alt="placeholder" />
+            <img src="https://placehold.co/600x1200" alt="placeholder" />
         </div>
       </div>
     </main>

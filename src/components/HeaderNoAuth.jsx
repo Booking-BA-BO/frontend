@@ -6,7 +6,7 @@ const HeaderNoAuth = () => {
   return (
     <header className="header">
       <div className="header-background">
-        <div className="headerLeft">
+        <div className="header-left">
           <img
             className="logo-image"
             src="../../public/photos/logo.png"
