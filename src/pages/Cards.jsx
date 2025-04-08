@@ -10,7 +10,7 @@ import { AppContext } from "../Context/AppContext.jsx";
 
 export default function Cards() {
   const [isPopupVisible, setPopupVisible] = useState(false);
-  const { esemenyek } = useApiContext();
+  const { topEsemenyek } = useApiContext();
 
   const showPopup = () => {
     setPopupVisible(true);
@@ -32,15 +32,13 @@ export default function Cards() {
           </a>
         </div>
         <div className="kartyak">
-            {
-              esemenyek.map((elem, index) => {
-                return <CardComponent elem={elem} key={index} index={index}/>
-              })                
-            }
+          {topEsemenyek.map((elem, index) => {
+            return <CardComponent elem={elem} key={index} index={index} />;
+          })}
           <div className="plus-card">
             <div>
               <button className="plus" onClick={showPopup}>
-              +
+                +
               </button>
               {isPopupVisible && (
                 <>
