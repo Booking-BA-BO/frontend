@@ -36,7 +36,7 @@ export default function Login() {
       <div className="login-header">
         <h1>Jelentkezz be!</h1>
         <p>
-          Nincs még profilod? <a class="regisztraciosGomb" href="/register">Regisztrálj!</a>
+          Nincs még profilod? <a className="regisztraciosGomb" href="/register">Regisztrálj!</a>
         </p>
       </div>
       <form className="formElem" onSubmit={handleLogin}>

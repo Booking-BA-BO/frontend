@@ -1,5 +1,5 @@
 .hello-header-container {
-  width: 80%;
+/*   width: 80%; */
   margin: auto;
   text-align: center;
 }
@@ -15,7 +15,7 @@
 }
 
 .search-input {
-  width: 30%;
+  max-width: 300px;
   margin-right: 15px;
   padding: 10px 10px;
   border: 1px solid black;
