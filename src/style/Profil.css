@@ -1,68 +1,88 @@
-.kulso{
-    border-radius: 8px;
-    max-width: 1400px;  
-    margin: auto;
-    padding: 10px;
+.kulso {
+  border-radius: 8px;
+  max-width: 1400px;
+  margin: auto;
+  padding: 10px;
 }
 
-.kozepso > .profil-navigacio > ul > div >h1{
-    color: white;
+.kozepso > .profil-navigacio > ul > div > h1 {
+  color: white;
 }
 
-.kozepso{
-
-    margin: auto;
-    border: 2px solid rgb(129, 191, 182);
-    border-radius: 8px;
-    display: flex;
-    background-color: rgb(129, 191, 182);
+.kozepso {
+  margin: auto;
+  border: 2px solid rgb(129, 191, 182);
+  border-radius: 8px;
+  display: flex;
+  background-color: rgb(129, 191, 182);
 }
 
-.belso{
-    background-color: white;
-    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-        border-radius: 8px;
-        width: 100%;
-        max-width: 1100px;
-        margin: 20px;
-        height: 600px;
-        color: black;
+.belso {
+  background-color: white;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 20px;
+  height: 600px;
+  color: black;
 }
 
-.profil-navigacio{
-    display: flex;
-    align-items: center;
+.profil-navigacio {
+  display: flex;
+  align-items: center;
 }
 
-.profil-navigacio > ul{
-    list-style-type: none;
-    float: left;
+.profil-navigacio > ul {
+  list-style-type: none;
+  float: left;
 }
 
 /*aktív*/
-.active> a{
-    color: black;
-    margin: 5px;
-    padding: 5PX;
+.active > a {
+  color: black;
+  margin: 5px;
+  padding: 5px;
 }
 
-.active{
-    margin: 10px 0;
-    border-radius: 10pt;
-    background-color: white;
-    width: 120%;
-    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+.active {
+  margin: 10px 0;
+  border-radius: 10pt;
+  background-color: white;
+  width: 120%;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
 /*passzív*/
 .passive > a {
-    color: white;
-    margin: 5px;
-    padding: 5PX;
+  color: white;
+  margin: 5px;
+  padding: 5px;
 }
 
-.passive{
-    margin: 10px 0;
-    border-radius: 10pt;
-    width: 120%;
+.passive {
+  margin: 10px 0;
+  border-radius: 10pt;
+  width: 120%;
+}
+
+@media (max-width: 950px) {
+  .kozepso {
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+  }
+  .belso {
+    width: 95%;
+  }
+
+  .profil-navigacio > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 10px;
+  }
+
+  .profil-navigacio > ul > div > h1 {
+    font-size: large;
+    margin: 25px 0px;
+  }
 }
