@@ -38,67 +38,65 @@ export default function Register() {
       <div className="login-header">
         <h1>Vágjunk bele</h1>
         <p>
-          Van már profilod? <a href="/login">Jelentkezz be!</a>
+          Van már profilod?{" "}
+          <a className="regisztraciosGomb" href="/login">
+            Jelentkezz be!
+          </a>
         </p>
+      </div>
+      <form className="formElem" onSubmit={handleRegister}>
+        <div className="label">
+          <p>Név</p>
         </div>
-        <form  className="formElem" onSubmit={handleRegister}>
-          <div className="label">
-            <p>Név</p>
-          </div>
-          <input
-            className="login-input"
-            type="text"
-            placeholder="Lakatos Naruto"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          />
-          {errors.name && <p className="text-danger">{errors.name[0]}</p>}
-          <div className="label">
-            <p>Email</p>
-          </div>
-          <input
-            className="login-input"
-            type="text"           
-            placeholder="Email"
-            value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
-          />
-          {errors.email && <p className="text-danger">{errors.email[0]}</p>}
-          <div className="label">
-            <p>Jelszó</p>
-          </div>
-          <input
-            className="login-input"
-            type="password"           
-            placeholder="********"
-            value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
-          />
-          {errors.password && (
-            <p className="text-danger">{errors.password[0]}</p>
-          )}
-          <div className="label">
-            <p>Jelszó megerősítés</p>
-          </div>
-          <input
-            className="login-input"
-            type="password"
-            placeholder="********"
-            value={formData.password_confirmation}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                password_confirmation: e.target.value,
-              })
-            }
-          />
-          <button className="login-button">Regisztrálj!</button>
-        </form>
-      
+        <input
+          className="login-input"
+          type="text"
+          placeholder="Lakatos Naruto"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        />
+        {errors.name && <p className="text-danger">{errors.name[0]}</p>}
+        <div className="label">
+          <p>Email</p>
+        </div>
+        <input
+          className="login-input"
+          type="text"
+          placeholder="Email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+        {errors.email && <p className="text-danger">{errors.email[0]}</p>}
+        <div className="label">
+          <p>Jelszó</p>
+        </div>
+        <input
+          className="login-input"
+          type="password"
+          placeholder="********"
+          value={formData.password}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
+        />
+        {errors.password && <p className="text-danger">{errors.password[0]}</p>}
+        <div className="label">
+          <p>Jelszó megerősítés</p>
+        </div>
+        <input
+          className="login-input"
+          type="password"
+          placeholder="********"
+          value={formData.password_confirmation}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              password_confirmation: e.target.value,
+            })
+          }
+        />
+        <button className="login-button">Regisztrálj!</button>
+      </form>
     </>
   );
 }
