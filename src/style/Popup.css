@@ -62,3 +62,10 @@
   display: block;
   opacity: 1;
 }
+
+@media (max-width: 950px) {
+  .whole-form-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+}
