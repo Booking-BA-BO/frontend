@@ -88,18 +88,22 @@ const FaqAccordionComponent = () => {
             <Container>
               <Row className="justify-content-center">
                 <Col xs={6} md={4} className="text-center">
-                  <Image
-                    src="../../public/photos/both_orsolya.jpg"
-                    roundedCircle
-                  />
+                  <a href="/contact">
+                    <Image
+                      src="../../public/photos/both_orsolya.jpg"
+                      roundedCircle
+                    />
+                  </a>
                   <h4>Both Orsolya</h4>
                   <p>Developer</p>
                 </Col>
                 <Col xs={6} md={4} className="text-center">
-                  <Image
-                    src="../../public/photos/beldy_adam.jpg"
-                    roundedCircle
-                  />
+                  <a href="/contact">
+                    <Image
+                      src="../../public/photos/beldy_adam.jpg"
+                      roundedCircle
+                    />
+                  </a>
                   <h4>Béldy Ádám</h4>
                   <p>Developer</p>
                 </Col>
