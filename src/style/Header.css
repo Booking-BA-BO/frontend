@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .headerLeft {
@@ -28,11 +28,10 @@
   text-align: right;
 }
 
-.header-hamburger{
+.header-hamburger {
   text-align: right;
   float: right;
 }
-
 
 .header {
   font-weight: bold;
@@ -44,17 +43,18 @@
   width: 100%;
 }
 
-.header-background h1,h5 {
+.header-background h1,
+h5 {
   margin: 0;
   padding: 5px 10px;
   color: rgb(240, 249, 248);
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-.login{
+.login {
   padding: 5px 10px;
   color: rgb(240, 249, 248);
   text-decoration: none;
@@ -63,4 +63,10 @@ a{
 
 h1 > .logo {
   color: white;
+}
+
+img {
+  width: 60px;
+  float: left;
+  margin-right: 10px;
 }
