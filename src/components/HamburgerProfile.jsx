@@ -12,10 +12,21 @@ const HamburgerProfile = () => {
       {isOpen && (
         <nav className="menu">
           <ul>
-            <li><a href="/profile">Profil</a></li>
-            <li><a href="/contact">Kontakt</a></li>
-            <li><a href="/faq">FAQs</a></li>
-            <li><Logout /></li>
+            <li>
+              <a href="/profile">Profil</a>
+            </li>
+            <li>
+              <a href="/contact">Felfedezés</a>
+            </li>
+            <li>
+              <a href="/contact">Kontakt</a>
+            </li>
+            <li>
+              <a href="/faq">FAQs</a>
+            </li>
+            <li>
+              <Logout />
+            </li>
           </ul>
         </nav>
       )}
