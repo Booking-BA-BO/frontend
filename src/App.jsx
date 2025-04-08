@@ -19,6 +19,7 @@ import AllEvents from "./pages/AllEventsPage";
 import ReservationPage from "./pages/ReservationPage";
 import HeaderNoAuth from "./components/HeaderNoAuth";
 import ContactPage from "./pages/ContactPage";
+import Faq from "./pages/Faq";
 
 export default function App() {
   const { user } = useContext(AppContext);
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="/profile/events" element={<AllEvents />} />
           <Route path="/:endpoint" element={<ReservationPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/faq" element={<Faq />} />
         </Route>
       </Routes>
       <Footer />
