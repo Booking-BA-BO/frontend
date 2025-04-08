@@ -4,6 +4,18 @@ import "../style/ModifyProfile.css";
 
 function ModifyProfile() {
   const { user } = useContext(AppContext);
+
+  const formatDate = (iso) => {
+    const date = new Date(iso);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+
+    return `${year}-${month}-${day} ${hours}:${minutes}`;
+  };
+
   if (user?.id) {
     return (
       <div className="profiladatok">
@@ -30,9 +42,12 @@ function ModifyProfile() {
             {user.telefon}
             <button className="modify-gomb">✏️</button>
           </p>
-            <h6></h6>
+          <h6></h6>
           <div className="jelszo-valtoztatas-div">
-            <h6>Jelszó változtatás</h6>
+            <div className="jelszo-valtoztatas-es-utoljara-valtoztatott">
+              <h6>Jelszó változtatás</h6>
+              <p>Legutóbb változtatva: {formatDate(user.updated_at)}</p>
+            </div>
             <form action="">
               <div className="jelszo-valtoztatas-form">
                 <div>
@@ -61,6 +76,8 @@ function ModifyProfile() {
       </div>
     );
   }
+
+  return null;
 }
 
 export default ModifyProfile;
