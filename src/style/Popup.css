@@ -51,6 +51,8 @@
 }
 
 .overlay.active {
+  margin: 0;
+  background-color: rgba(26, 25, 25, 0.492);
   display: block;
   opacity: 1;
 }
