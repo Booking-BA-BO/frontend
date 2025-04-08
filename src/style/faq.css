@@ -31,12 +31,13 @@
 }
 
 .accordion-header > button {
-  color: blue;
+  color: #81bfb7;
   font-weight: 600;
 }
 
 .accordion-button:not(.collapsed) {
   background-color: #81bfb7;
+  color: white;
 }
 
 .faq-profile-pic {

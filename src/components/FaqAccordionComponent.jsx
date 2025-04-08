@@ -87,7 +87,7 @@ const FaqAccordionComponent = () => {
           <div className="memberPics d-flex justify-content-center align-items-center">
             <Container>
               <Row className="justify-content-center">
-                <Col xs={6} md={4} className="text-center">
+                <Col xs={12} md={4} className="text-center">
                   <a href="/contact">
                     <Image
                       className="faq-profile-pic"
@@ -98,7 +98,7 @@ const FaqAccordionComponent = () => {
                   <h4>Both Orsolya</h4>
                   <p>Developer</p>
                 </Col>
-                <Col xs={6} md={4} className="text-center">
+                <Col xs={12} md={4} className="text-center">
                   <a href="/contact">
                     <Image
                       className="faq-profile-pic"
