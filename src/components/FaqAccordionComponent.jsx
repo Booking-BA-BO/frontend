@@ -12,7 +12,6 @@ const FaqAccordionComponent = () => {
         <h2>Gyakran ismételt kérdések</h2>
         <div className="content">
           <Accordion>
-            
             <Accordion.Item eventKey="0">
               <Accordion.Header>Kérdés 1?</Accordion.Header>
               <Accordion.Body>
@@ -77,7 +76,6 @@ const FaqAccordionComponent = () => {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </Accordion.Body>
             </Accordion.Item>
-
           </Accordion>
         </div>
         <div className="contactUs">
@@ -90,19 +88,24 @@ const FaqAccordionComponent = () => {
             <Container>
               <Row className="justify-content-center">
                 <Col xs={6} md={4} className="text-center">
-                  <Image src="https://placehold.co/100x100" roundedCircle />
-                  <h4>Név</h4>
-                  <p>Rang</p>
+                  <Image
+                    src="../../public/photos/both_orsolya.jpg"
+                    roundedCircle
+                  />
+                  <h4>Both Orsolya</h4>
+                  <p>Developer</p>
                 </Col>
                 <Col xs={6} md={4} className="text-center">
-                  <Image src="https://placehold.co/100x100" roundedCircle />
-                  <h4>Név</h4>
-                  <p>Rang</p>
+                  <Image
+                    src="../../public/photos/beldy_adam.jpg"
+                    roundedCircle
+                  />
+                  <h4>Béldy Ádám</h4>
+                  <p>Developer</p>
                 </Col>
               </Row>
             </Container>
           </div>
-          <a href="/contact" className="gomb">Kontakt</a>
         </div>
       </div>
     </>
