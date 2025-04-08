@@ -68,3 +68,8 @@
     background-color: rgb(129, 191, 183);
     color: rgb(240, 249, 248);
 }
+
+.jelszo-valtoztatas-es-utoljara-valtoztatott{
+    display: flex;
+    justify-content: space-between;
+}
