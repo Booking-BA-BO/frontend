@@ -1,16 +1,109 @@
-.welcome-container {
-  display: flex;
+.welcome-container {  
   width: 80%;
   margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "left-section-main right-section-main";
 }
 
-.left-section {
-  width: 60%;
-  padding: 20px;
-}
+.left-section-main { grid-area: left-section-main; }
 
-.right-section {
-  width: 40%;
+.right-section-main { grid-area: right-section-main; }
+
+
+.right-section-main {
+  border: 1px solid black;
   padding: 20px;
   text-align: right;
+}
+
+.introductionText{
+  padding: 20px;
+}
+
+.introductionText > h1 {
+  font-weight: bold;
+  font-size: 80px;
+}
+
+.introductionText > h6{
+  padding-top: 40px;
+}
+
+.buttonsIntroduction{
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.buttonsIntroduction > a{
+  margin-right: 20px;
+  padding: 10px 30px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 5px;
+}
+
+.introductionText > div > h3{
+  border-top: 1px solid black;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.kepek-div {
+  gap: 5px;
+}
+
+
+.kepek-div > img {
+  max-width: 160px;
+  border: 2px solid black;
+}
+
+.left-section-main {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+@media (max-width: 1024px) {
+  .introductionText > h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .introductionText > h1 {
+    font-size: 40px;
+  }
+
+  .right-section-main {
+    display: none;
+  }
+
+  .left-section-main {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left-section-main";
+  }
+
+  .welcome-container {  
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left-section-main";
+  }
+}
+
+@media (max-width: 480px) {
+  .introductionText > h1 {
+    font-size: 28px;
+  }
 }
