@@ -80,9 +80,23 @@ form .label {
 .left-section .kep {
   width: 100%;
   height: auto;
-
 }
 
 form div.label p {
   margin: 0;
+}
+
+@media (max-width: 950px) {
+  .login-card {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+
+  .right-section {
+    width: 100%;
+  }
+
+  .left-section {
+    display: none;
+  }
 }
