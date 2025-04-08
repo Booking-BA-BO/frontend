@@ -91,3 +91,38 @@
   background-color: rgb(230, 198, 198);
   color: white;
 }
+
+.kartyak{
+  margin: auto;
+  max-width: 1200px;
+}
+
+
+.plus-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 1rem auto;
+  width: 260px;
+  height: 260px;
+  background-color: #f3a2be;
+  padding: 0;
+}
+
+.plus-card:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.plus{
+  border: none;
+  margin: auto;
+  background-color: transparent;
+  text-align: center;
+  font-size: 100px;
+  padding: 50px;
+}

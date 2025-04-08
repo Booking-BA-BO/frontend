@@ -13,7 +13,7 @@ const HamburgerProfile = () => {
         <nav className="menu">
           <ul>
             <li><a href="/profile">Profil</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="/contact">Kontakt</a></li>
             <li><a href="#">FAQs</a></li>
             <li><Logout /></li>
           </ul>

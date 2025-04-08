@@ -37,10 +37,10 @@ export default function Cards() {
                 return <CardComponent elem={elem} key={index} index={index}/>
               })                
             }
-          <div className="card">
+          <div className="plus-card">
             <div>
               <button className="plus" onClick={showPopup}>
-                +
+              +
               </button>
               {isPopupVisible && (
                 <>

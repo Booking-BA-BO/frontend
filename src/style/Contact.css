@@ -1,0 +1,133 @@
+main{
+    background-color: #F0F9F8;
+}
+
+
+.oldal{
+    display: grid; 
+    grid-template-columns: 1fr 2fr;
+    max-width: 1000px;
+    margin: auto;
+    gap: 20px;
+    padding: 50px 0;
+    position: relative;
+}
+
+.elerhetosegek > .hely, .emailcim, .telefonszam{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    color: white;
+}
+
+.icon {
+    margin-right: 40px;
+    font-size: 34px;
+}
+
+.elerhetosegek > h2{
+    text-align: center;
+    color: white;
+}
+
+.contact-us-location-container{
+    background-color: #81BFB7;
+    max-height: 475px;
+    position: relative;
+    max-width: 400px;
+    margin-right: -200px;
+    margin-left: 100px;
+    margin-top: 22px; 
+}
+
+.contact-us-form-container{
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+.contact-us-form-container > h1{
+    text-align: right;
+}
+
+.contact-us-form-container > form{
+ padding-left: 200px;
+}
+
+.contact-us-form-container input::placeholder,
+.contact-us-form-container textarea::placeholder {
+    color: gray;
+}
+
+.contact-us-form-container > form > .input-mezo{
+    padding: 5px;
+}
+
+.kuldes > .gomb{
+    border-radius: 25px;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #81BFB7;
+    color: white;
+    text-align: center;
+    border: none;
+    font-size: large;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.kuldes{
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 950px) {
+    .oldal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 40px;
+    }
+  
+    .contact-us-form-container {
+      padding: 20px;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      width: 100%;
+      max-width: 600px;
+    }
+  
+    .contact-us-form-container > form {
+      padding-left: 0;
+    }
+  
+    .contact-us-location-container {
+      background-color: #81BFB7;
+      margin: 0;
+      max-width: 600px;
+      max-height: none;
+      width: 100%;
+    }
+  
+    .elerhetosegek > .hely,
+    .emailcim,
+    .telefonszam {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+  
+    .icon {
+      margin-right: 0;
+      font-size: 28px;
+    }
+  
+    .contact-us-form-container > h1 {
+      text-align: center;
+    }
+  }
