@@ -15,7 +15,7 @@
 .right-section-main {
   border: 1px solid black;
   padding: 20px;
-  text-align: right;
+  text-align: center;
 }
 
 .introductionText{
@@ -55,18 +55,48 @@
 
 .kepek-div {
   gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: rgb(240, 249, 248);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  text-align: center;
 }
 
+.kepek-div > .kepcsoport {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
-.kepek-div > img {
-  max-width: 160px;
+.kepek-div > .kepcsoport > img {
+  width: 40%;
+  height: auto;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 2px solid black;
 }
 
 .left-section-main {
   border: 1px solid black;
   padding: 20px;
+  background-color: white;
 }
+
+
+
 
 @media (max-width: 1024px) {
   .introductionText > h1 {
@@ -105,5 +135,9 @@
 @media (max-width: 480px) {
   .introductionText > h1 {
     font-size: 28px;
+  }
+
+  .kepek-div > .kepcsoport > img {
+    width: 100%;
   }
 }
