@@ -1,40 +1,45 @@
-.faqPage > h2{
-    margin: 0;
-    padding: 30px;
+.faqPage > h2 {
+  margin: 0;
+  padding: 30px;
 }
 
-.content{
-    max-width: 900px;
-    margin: auto;
-    border: 0px;
+.content {
+  max-width: 900px;
+  margin: auto;
+  border: 0px;
 }
 
-.contactUs{
-    padding-top: 50px;
-    text-align: center;
-    padding-bottom: 50px;
+.contactUs {
+  padding-top: 50px;
+  text-align: center;
+  padding-bottom: 50px;
 }
 
-.contactUs > .gomb{
-    background-color: #81bfb7;
-    padding: 7px;
-    padding-left: 40px;
-    padding-right: 40px;
-    color: white;
-    border-radius: 10px;
+.contactUs > .gomb {
+  background-color: #81bfb7;
+  padding: 7px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: white;
+  border-radius: 10px;
 }
 
-.accordion-item, .accordion-item:first-of-type {
-    border: 0;
-    padding: 0;
+.accordion-item,
+.accordion-item:first-of-type {
+  border: 0;
+  padding: 0;
 }
 
-.accordion-header > button{
-    color: blue;
-    font-weight: 600;
+.accordion-header > button {
+  color: blue;
+  font-weight: 600;
 }
-
 
 .accordion-button:not(.collapsed) {
-    background-color: #81bfb7;
+  background-color: #81bfb7;
+}
+
+.faq-profile-pic {
+  max-width: 200px;
+  margin-bottom: 10px;
 }

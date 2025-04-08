@@ -8,7 +8,11 @@ const Header = () => {
     <header className="header">
       <div className="header-background">
         <div className="header-left">
-        <img src="../../public/photos/logo.png" alt="logo" />
+          <img
+            className="logo-image"
+            src="../../public/photos/logo.png"
+            alt="logo"
+          />
           <h1>
             <a className="logo" href="/">
               BookIT{" "}

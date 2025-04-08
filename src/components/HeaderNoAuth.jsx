@@ -7,7 +7,11 @@ const HeaderNoAuth = () => {
     <header className="header">
       <div className="header-background">
         <div className="headerLeft">
-          <img src="../../public/photos/logo.png" alt="logo" />
+          <img
+            className="logo-image"
+            src="../../public/photos/logo.png"
+            alt="logo"
+          />
           <h1>
             <a className="logo" href="/">
               BookIT{" "}

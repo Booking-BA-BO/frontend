@@ -90,6 +90,7 @@ const FaqAccordionComponent = () => {
                 <Col xs={6} md={4} className="text-center">
                   <a href="/contact">
                     <Image
+                      className="faq-profile-pic"
                       src="../../public/photos/both_orsolya.jpg"
                       roundedCircle
                     />
@@ -100,6 +101,7 @@ const FaqAccordionComponent = () => {
                 <Col xs={6} md={4} className="text-center">
                   <a href="/contact">
                     <Image
+                      className="faq-profile-pic"
                       src="../../public/photos/beldy_adam.jpg"
                       roundedCircle
                     />
