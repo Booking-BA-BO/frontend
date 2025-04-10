@@ -1,19 +1,7 @@
-.kartyak-content{
-    max-width: 1500px;
-    margin: auto;
-    border: 0px;
-}
-
-/* .osszes-kartya-megjelenitve{
-  display: flex;  
-}
-
-.kartyak-megjelenitve{
+.kartyak {
   display: flex;
   justify-content: center;
-} */
-
-
+}
 
 .cimEsNav {
   margin-top: 25px;
@@ -29,11 +17,10 @@
 }
 
 @media (max-width: 1100px) {
-
+  .kartyak {
+    flex-wrap: wrap;
+  }
 }
-
-
-
 
 .close-new-form{
   margin: 10px;
@@ -66,14 +53,14 @@
 }
 
 
-/* .left-container {
+.left-container {
   flex: 50%;
 }
 
 
 .right-container {
   flex: 50%;
-} */
+}
 
 .text-area{
   height: 200px;
@@ -112,7 +99,10 @@
 }
 
 
-/* .plus-card{
+.plus-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
@@ -122,7 +112,7 @@
   height: 260px;
   background-color: #f3a2be;
   padding: 0;
-} */
+}
 
 .plus-card:hover {
   border-color: #008bf8;
@@ -136,32 +126,4 @@
   text-align: center;
   font-size: 100px;
   padding: 50px;
-}
-
-
-
-.osszes-kartya-megjelenitve {
-  display: flex;
-  justify-content: center;
-  gap: 20px; 
-  flex-wrap: wrap;
-}
-
-.kartyak-megjelenitve {
-  display: flex;
-  flex-direction: row; 
-  align-items: center;
-}
-
-.plus-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 1rem;
-  width: 260px;
-  height: 260px;
-  background-color: #f3a2be;
 }
