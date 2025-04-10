@@ -24,17 +24,19 @@ export default function Cards() {
       <div>
         <HelloHeader />
       </div>
-      <div className="content">
+      <div className="kartyak-content">
         <div className="cimEsNav">
           <h1>Munkáim</h1>
           <a href="#">
             <h3>Mindent mutass</h3>
           </a>
         </div>
-        <div className="kartyak">
-          {topEsemenyek.map((elem, index) => {
-            return <CardComponent elem={elem} key={index} index={index} />;
-          })}
+        <div className="osszes-kartya-megjelenitve">
+          <a href="/modifyevent" className="kartyak-megjelenitve">
+            {topEsemenyek.map((elem, index) => {
+              return <CardComponent elem={elem} key={index} index={index} />;
+            })}
+          </a>
           <div className="plus-card">
             <div>
               <button className="plus" onClick={showPopup}>

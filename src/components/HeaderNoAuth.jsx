@@ -9,7 +9,7 @@ const HeaderNoAuth = () => {
         <div className="header-left">
           <img
             className="logo-image"
-            src="../../public/photos/logo.png"
+            src="photos/logo.png"
             alt="logo"
           />
           <h1>

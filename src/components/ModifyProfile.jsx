@@ -1,10 +1,42 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../Context/AppContext";
 import "../style/ModifyProfile.css";
+import EditableField from "./EditableField";
+import axios from "axios";
 
 function ModifyProfile() {
   const { user } = useContext(AppContext);
+  const [userAdatok, setUserAdatok] = useState({
+      name: user?.name || '',
+      vezetek_nev: user?.vezetek_nev || '',
+      kereszt_nev: user?.kereszt_nev || '',
+      email: user?.email || '',
+      telefon: user?.telefon || ''
+  });
 
+  useEffect(() => {
+    setUserAdatok({ ...user });
+  }, [user]);
+
+  const HandleChange = async (id, value) => {
+    setUserAdatok((prevData) => ({
+      ...prevData,
+      [id]: value
+    }));
+
+    try {
+      const response = await axios.patch(`/api/modify-user-data/${user.id}`, {
+        [id]: value,
+      });
+
+      if (response.status === 200) {
+        console.log('Felhasználói adatok sikeresen frissítve:', response.data);
+      }
+    } catch (error) {
+      console.error('Hiba történt az adatfrissítés közben:', error);
+    }
+  };
+  
   const formatDate = (iso) => {
     const date = new Date(iso);
     const year = date.getFullYear();
@@ -21,27 +53,48 @@ function ModifyProfile() {
       <div className="profiladatok">
         <h3>Adataim szerkesztése</h3>
         <div className="profil-szerkesztes">
-          <h2>AZ ÉN SZEMÉLYES OLDALAM: http://localhost:5173/{user.egyeni_vegpont}</h2>
-          <h6>Felhasználó név</h6>
-          <p>
-            {user.name}
-            <button className="modify-gomb">✏️</button>
-          </p>
-          <h6>Email cím</h6>
-          <p>
-            {user.email}
-            <button className="modify-gomb">✏️</button>
-          </p>
-          <h6>Teljes név:</h6>
-          <p>
-            {user.vezetek_nev} {user.kereszt_nev}
-            <button className="modify-gomb">✏️</button>
-          </p>
-          <h6>Telefon szám:</h6>
-          <p>
-            {user.telefon}
-            <button className="modify-gomb">✏️</button>
-          </p>
+          <h2>
+            AZ ÉN SZEMÉLYES OLDALAM: http://localhost:5173/{user.egyeni_vegpont}
+          </h2>
+          <EditableField
+            name = "name"
+            id="name"
+            label="Felhasználónév"
+            value={userAdatok.name}
+            onChange={HandleChange} 
+          />
+          <EditableField
+            name = "email"
+            id="email"
+            label="Email cím"
+            value={userAdatok.email}
+            onChange={HandleChange} 
+          />
+
+          <EditableField
+            name = "vezetek_nev"
+            id="vezetek_nev"
+            label="Vezeték név"
+            value={userAdatok.vezetek_nev}
+            onChange={HandleChange} 
+          />
+
+          <EditableField
+            name = "kereszt_nev"
+            id="kereszt_nev"
+            label="Kereszt név"
+            value={userAdatok.kereszt_nev}
+            onChange={HandleChange} 
+          />
+
+          <EditableField
+            name = "telefon"
+            id="telefon"
+            label="Telefonszám"
+            value={userAdatok.telefon}
+            onChange={HandleChange} 
+          />
+
           <h6></h6>
           <div className="jelszo-valtoztatas-div">
             <div className="jelszo-valtoztatas-es-utoljara-valtoztatott">
@@ -69,7 +122,9 @@ function ModifyProfile() {
                   <input type="text" />
                 </div>
               </div>
-              <button className="jelszo-valtoztatas-gomb">Jelszó módosítása</button>
+              <button className="jelszo-valtoztatas-gomb">
+                Jelszó módosítása
+              </button>
             </form>
           </div>
         </div>
@@ -78,6 +133,6 @@ function ModifyProfile() {
   }
 
   return null;
-}
+  }
 
 export default ModifyProfile;

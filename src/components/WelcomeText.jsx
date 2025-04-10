@@ -14,12 +14,12 @@ const WelcomeText = () => {
             <h3>Funkciók:</h3>
             <div className="kepek-div">
               <div className="kepcsoport">
-              <img src="../../public/photos/effective.jpg" alt="effective" />
-              <img src="../../public/photos/exportable.jpg" alt="exportable" />
+              <img src="photos/effective.jpg" alt="effective" />
+              <img src="photos/exportable.jpg" alt="exportable" />
               </div>
               <div className="kepcsoport">
-              <img src="../../public/photos/managable.jpg" alt="managable" />
-              <img src="../../public/photos/integratable.jpg" alt="integratable" />
+              <img src="photos/managable.jpg" alt="managable" />
+              <img src="photos/integratable.jpg" alt="integratable" />
               </div>
             </div>
         </div>
