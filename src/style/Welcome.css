@@ -13,7 +13,6 @@
 
 
 .right-section-main {
-  border: 1px solid black;
   padding: 20px;
   text-align: center;
 }
@@ -61,7 +60,6 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border: 1px solid black;
   margin-top: 20px;
   margin-bottom: 20px;
   width: 100%;
@@ -86,11 +84,9 @@
   margin: 5px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid black;
 }
 
 .left-section-main {
-  border: 1px solid black;
   padding: 20px;
   background-color: white;
 }
