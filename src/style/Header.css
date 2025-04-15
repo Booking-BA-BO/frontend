@@ -71,3 +71,51 @@ h1 > .logo {
   float: left;
   margin-right: 10px;
 }
+
+
+.headerMid,
+.headerRight {
+  display: flex;
+}
+
+.no-auth-hamburger-mobile {
+  display: none;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.headerMid {
+  display: flex;
+  gap: 20px; 
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-background {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0 20px;
+}
+
+
+@media (max-width: 1050px) {
+  .headerMid,
+  .headerRight {
+    display: none;
+  }
+
+  .no-auth-hamburger-mobile {
+    display: block;
+  }
+}
+
+
+

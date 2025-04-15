@@ -34,7 +34,7 @@ function Logout() {
                     </form>
                     </div>) : (
                         <div>
-                            FASZ
+                            <p className="kijelentkezesSzoveg">Nincs bejelentkezve</p>
                         </div>)}
         </div>
     );

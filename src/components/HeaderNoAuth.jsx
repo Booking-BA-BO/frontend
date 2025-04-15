@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import NoAuthHamburger from "./NoAuthHaburger";
 
 const HeaderNoAuth = () => {
   return (
@@ -18,6 +19,7 @@ const HeaderNoAuth = () => {
             </a>
           </h1>
         </div>
+
         <div className="headerMid">
           <a href="#">
             <h5>Felfedezés</h5>
@@ -29,11 +31,17 @@ const HeaderNoAuth = () => {
             <h5>FAQs</h5>
           </a>
         </div>
+
         <div className="headerRight">
           <a href="/login" className="login">
             <h5>Bejelentkezés</h5>
           </a>
         </div>
+
+        <div className="no-auth-hamburger-mobile">
+          <NoAuthHamburger />
+        </div>
+        
       </div>
     </header>
   );
