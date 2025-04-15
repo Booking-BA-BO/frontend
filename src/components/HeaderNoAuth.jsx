@@ -8,11 +8,9 @@ const HeaderNoAuth = () => {
     <header className="header">
       <div className="header-background">
         <div className="header-left">
-          <img
-            className="logo-image"
-            src="photos/logo.png"
-            alt="logo"
-          />
+          <a href="/">
+            <img className="logo-image" src="photos/logo.png" alt="logo" />
+          </a>
           <h1>
             <a className="logo" href="/">
               BookIT{" "}
@@ -41,7 +39,6 @@ const HeaderNoAuth = () => {
         <div className="no-auth-hamburger-mobile">
           <NoAuthHamburger />
         </div>
-        
       </div>
     </header>
   );
