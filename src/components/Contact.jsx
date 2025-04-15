@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "../style/Contact.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
-import { faLocationDot, faEnvelope, faPhone, } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { AppContext } from "../Context/AppContext";
 
 const Contact = () => {
+  const { user } = useContext(AppContext);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,9 +14,19 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
+  useEffect(() => {
+    if (user) {
+      setFormData((prev) => ({
+        ...prev,
+        name: user.name || "",
+        email: user.email || ""
+      }));
+    }
+  }, [user]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
@@ -24,28 +36,28 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-  
+
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/contact', {
-        method: 'POST',
+      const response = await fetch("http://127.0.0.1:8000/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json"
         },
         body: JSON.stringify(formData)
       });
-  
+
       const data = await response.json();
-      
+
       if (!response.ok) {
-        throw new Error(data.message || 'Server error');
+        throw new Error(data.message || "Server error");
       }
-  
-      setSubmitStatus('success');
+
+      setSubmitStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error('Error:', error);
-      setSubmitStatus('error');
+      console.error("Error:", error);
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -55,7 +67,7 @@ const Contact = () => {
     <>
       <main>
         <div className="oldal">
-        <div className="contact-us-location-container">
+          <div className="contact-us-location-container">
             <div className="elerhetosegek">
               <h2>Keress fel minket!</h2>
               <div className="hely">
@@ -116,19 +128,24 @@ const Contact = () => {
                   required
                 />
                 <div className="kuldes">
-                  <button 
-                    className="gomb" 
+                  <button
+                    className="gomb"
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Küldés folyamatban...' : 'Küldés'}
+                    {isSubmitting ? "Küldés folyamatban..." : "Küldés"}
                   </button>
                 </div>
-                {submitStatus === 'success' && (
-                  <p className="success-message">Üzenet elküldve! Hamarosan válaszolunk.</p>
+                {submitStatus === "success" && (
+                  <p className="success-message">
+                    Üzenet elküldve! Hamarosan válaszolunk.
+                  </p>
                 )}
-                {submitStatus === 'error' && (
-                  <p className="error-message">Hiba történt az üzenet küldése közben. Kérjük, próbáld újra később.</p>
+                {submitStatus === "error" && (
+                  <p className="error-message">
+                    Hiba történt az üzenet küldése közben. Kérjük, próbáld újra
+                    később.
+                  </p>
                 )}
               </div>
             </form>
