@@ -7,12 +7,10 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-background">
-        <div className="header-left">
-          <img
-            className="logo-image"
-            src="photos/logo.png"
-            alt="logo"
-          />
+      <div className="header-left">
+          <a href="/">
+            <img className="logo-image" src="photos/logo.png" alt="logo" />
+          </a>
           <h1>
             <a className="logo" href="/">
               BookIT{" "}
