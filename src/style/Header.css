@@ -117,5 +117,14 @@ h1 > .logo {
   }
 }
 
+.logo {
+  display: none;
+  font-size: 40px;
+}
 
 
+@media (min-width: 450px) {
+  .logo {
+    display: inline;
+  }
+}
