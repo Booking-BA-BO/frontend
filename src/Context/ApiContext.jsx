@@ -9,8 +9,6 @@ export const ApiProvider = ({ children }) => {
   const [topEsemenyek, setTopEsemenyek] = useState([]);
   const [esemenyek, setEsemenyek] = useState([]);
 
-  //const [datumok, setDatumok] = useState([]);
-
   const getAdat = async (vegpont, asyFgv) => {
     try {
       const response = await myAxios.get(vegpont);
@@ -18,6 +16,15 @@ export const ApiProvider = ({ children }) => {
     } catch (err) {
       console.log(err);
       console.log(vegpont);
+    }
+  };
+
+  const postAdat = async (vegpont, esemenyData) => {
+    try {
+      const response = await myAxios.post(`${vegpont}`, esemenyData);
+      console.log("Sikeres POST:", response.data);
+    } catch (err) {
+      console.error("Hiba történt a mentés közben:", err);
     }
   };
 
@@ -29,7 +36,7 @@ export const ApiProvider = ({ children }) => {
   }, [user?.id]);
 
   return (
-    <ApiContext.Provider value={{ topEsemenyek, esemenyek }}>
+    <ApiContext.Provider value={{ topEsemenyek, esemenyek, postAdat, getAdat }}>
       {children}
     </ApiContext.Provider>
   );
