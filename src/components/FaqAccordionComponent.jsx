@@ -10,7 +10,7 @@ const FaqAccordionComponent = () => {
     <>
       <div className="faqPage">
         <h2>Gyakran ismételt kérdések</h2>
-        <div className="content">
+        <div className="faq-content">
           <Accordion>
             <Accordion.Item eventKey="0">
               <Accordion.Header>Kérdés 1?</Accordion.Header>
