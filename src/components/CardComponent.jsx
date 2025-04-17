@@ -11,7 +11,7 @@ const CardComponent = (props) => {
           <p className="text-body">{rovidLeiras}</p>
         <div className="arEsGomb">
             <h3 className="card-price">{props.elem.ar} Ft</h3>
-            <button className="card-button">&#8594;</button>
+            <button className="card-button"><a href="/modifyevent">&#8594;</a></button>
         </div>
         </div>
       </div>
