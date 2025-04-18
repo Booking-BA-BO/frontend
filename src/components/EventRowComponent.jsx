@@ -9,6 +9,7 @@ const EventRowComponent = (props) => {
             <td>{props.elem.hely}</td>
             <td>{props.elem.foglalastol}</td>
             <td>{props.elem.kapacitas}</td>
+            <td><a href={'/modifyevent/' + props.elem.esemeny_id}>✏️</a></td>
         </tr>
         </tbody>
     );

@@ -19,9 +19,9 @@ const CardComponent = (props) => {
       </div>
       <div class="kartya-lablec">
         {props.elem.ar} Ft{" "}
-        <button class="kartya-gomb">
-          <a href="/modifyevent">{"->"}</a>
-        </button>
+        <a href={'/modifyevent/' + props.elem.esemeny_id}>
+        <button class="kartya-gomb">↪</button>
+        </a>
       </div>
     </div>
   );
