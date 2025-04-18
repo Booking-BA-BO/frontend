@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { myAxios } from "../api/axios";
 import ReservationOptions from "../components/ReservationOptions";
 import "../style/reservation.css";
-import CardComponent from "../components/CardComponent";
 
 function ReservationPage() {
   const { endpoint } = useParams();

@@ -12,7 +12,6 @@ import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import Profil from "./pages/Profil";
-import { ApiProvider } from "./Context/ApiContext";
 import "./style/Profil.css";
 import ModifyPage from "./pages/ModifyPage";
 import AllEvents from "./pages/AllEventsPage";
@@ -38,7 +37,10 @@ export default function App() {
           <Route path="/:endpoint" element={<ReservationPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<Faq />} />
-          <Route path="/modifyevent" element={<ModifyEvent />} />
+          <Route path="/modifyevent/:event_id" element={<ModifyEvent />} />
+          <Route path="/event-form" element={<ModifyEvent />} />
+          <Route path="/event-hosts" element={<ModifyEvent />} />
+          <Route path="/reservations" element={<ModifyEvent />} />
         </Route>
       </Routes>
       <Footer />
