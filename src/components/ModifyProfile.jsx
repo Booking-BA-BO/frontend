@@ -7,11 +7,11 @@ import axios from "axios";
 function ModifyProfile() {
   const { user } = useContext(AppContext);
   const [userAdatok, setUserAdatok] = useState({
-      name: user?.name || '',
-      vezetek_nev: user?.vezetek_nev || '',
-      kereszt_nev: user?.kereszt_nev || '',
-      email: user?.email || '',
-      telefon: user?.telefon || ''
+    name: user?.name || "",
+    vezetek_nev: user?.vezetek_nev || "",
+    kereszt_nev: user?.kereszt_nev || "",
+    email: user?.email || "",
+    telefon: user?.telefon || "",
   });
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function ModifyProfile() {
   const HandleChange = async (id, value) => {
     setUserAdatok((prevData) => ({
       ...prevData,
-      [id]: value
+      [id]: value,
     }));
 
     try {
@@ -30,13 +30,13 @@ function ModifyProfile() {
       });
 
       if (response.status === 200) {
-        console.log('Felhasználói adatok sikeresen frissítve:', response.data);
+        console.log("Felhasználói adatok sikeresen frissítve:", response.data);
       }
     } catch (error) {
-      console.error('Hiba történt az adatfrissítés közben:', error);
+      console.error("Hiba történt az adatfrissítés közben:", error);
     }
   };
-  
+
   const formatDate = (iso) => {
     const date = new Date(iso);
     const year = date.getFullYear();
@@ -53,46 +53,61 @@ function ModifyProfile() {
       <div className="profiladatok">
         <h3>Adataim szerkesztése</h3>
         <div className="profil-szerkesztes">
-          <h2>
-            AZ ÉN SZEMÉLYES OLDALAM: http://localhost:5173/{user.egyeni_vegpont}
-          </h2>
+          
+          <div className="szemelyes-link">
+            <h2>
+              AZ ÉN SZEMÉLYES OLDALAM: http://localhost:5173/
+              {user.egyeni_vegpont}
+            </h2>
+            <button
+              className="copy-button"
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  `http://localhost:5173/${user.egyeni_vegpont}`
+                )
+              }
+            >
+              Másolás a vágólapra
+            </button>
+          </div>
+
           <EditableField
-            name = "name"
+            name="name"
             id="name"
             label="Felhasználónév"
             value={userAdatok.name}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
           <EditableField
-            name = "email"
+            name="email"
             id="email"
             label="Email cím"
             value={userAdatok.email}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
 
           <EditableField
-            name = "vezetek_nev"
+            name="vezetek_nev"
             id="vezetek_nev"
             label="Vezeték név"
             value={userAdatok.vezetek_nev}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
 
           <EditableField
-            name = "kereszt_nev"
+            name="kereszt_nev"
             id="kereszt_nev"
             label="Kereszt név"
             value={userAdatok.kereszt_nev}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
 
           <EditableField
-            name = "telefon"
+            name="telefon"
             id="telefon"
             label="Telefonszám"
             value={userAdatok.telefon}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
 
           <h6></h6>
@@ -133,6 +148,6 @@ function ModifyProfile() {
   }
 
   return null;
-  }
+}
 
 export default ModifyProfile;
