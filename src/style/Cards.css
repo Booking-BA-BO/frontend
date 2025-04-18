@@ -7,20 +7,16 @@
   margin-top: 25px;
   padding-top: 25px;
   display: flex;
-  /* justify-content: space-around; */
   justify-content: space-between;
   align-items: center;
+  max-width: 75%;
+  margin: auto;
 }
 
 .cimEsNav a {
   color: black;
 }
 
-@media (max-width: 1100px) {
-  .kartyak {
-    flex-wrap: wrap;
-  }
-}
 
 .close-new-form{
   margin: 10px;
@@ -95,35 +91,57 @@
 
 .kartyak{
   margin: auto;
-  max-width: 1200px;
+  max-width: 80%;
 }
 
-
-.plus-card{
+.plus-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  border-radius: 1rem;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  width: 300px;
+  height: 300px;
+  margin: 1rem;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 1rem auto;
-  width: 260px;
-  height: 260px;
-  background-color: #f3a2be;
-  padding: 0;
 }
 
-.plus-card:hover {
-  border-color: #008bf8;
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-}
-
-.plus{
+.plus {
   border: none;
-  margin: auto;
   background-color: transparent;
-  text-align: center;
-  font-size: 100px;
-  padding: 50px;
+  font-size: 5rem;
+  color: #81bfb7;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.plus:hover {
+  color: #58827c;
+}
+
+
+.minden-mutat-gomb{
+  border-bottom: 1px solid #81bfb7;
+}
+
+.minden-mutat-gomb:hover{
+  color: #0400ff;
+  border-bottom: 2px solid #81bfb7;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 1100px) {
+  .kartyak {
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
 }

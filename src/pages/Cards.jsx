@@ -17,7 +17,7 @@ export default function Cards() {
       <div className="cards-content">
         <div className="cimEsNav">
           <h1>Munkáim</h1>
-          <a href="#">
+          <a className="minden-mutat-gomb" href="#">
             <h3>Mindent mutass</h3>
           </a>
         </div>
