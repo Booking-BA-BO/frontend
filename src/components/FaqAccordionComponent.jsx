@@ -13,67 +13,37 @@ const FaqAccordionComponent = () => {
         <div className="faq-content">
           <Accordion>
             <Accordion.Item eventKey="0">
-              <Accordion.Header>Kérdés 1?</Accordion.Header>
+              <Accordion.Header>Hogyan tudom integrálni a foglalási oldalamat?</Accordion.Header>
               <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Egyszerű, a porfil oldaladon látható linken keresztül ezentúl bárhol használhatod!
               </Accordion.Body>
             </Accordion.Item>
 
             <Accordion.Item eventKey="1">
-              <Accordion.Header>Kérdés 2?</Accordion.Header>
+              <Accordion.Header>Hogyan tudom kezelni a foglalásimat?</Accordion.Header>
               <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                A foglalások kezeléséhez keresd fel az adott esemény szerkesztési oldalán a foglalások szerkesztése menüpontot.
               </Accordion.Body>
             </Accordion.Item>
 
             <Accordion.Item eventKey="2">
-              <Accordion.Header>Kérdés 3?</Accordion.Header>
+              <Accordion.Header>Kompatibilis google kalendárral?</Accordion.Header>
               <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Az eseményeket automatikusan google calendárba importálhatod, amint lefoglaltad az időpontot.
               </Accordion.Body>
             </Accordion.Item>
 
             <Accordion.Item eventKey="3">
-              <Accordion.Header>Kérdés 4?</Accordion.Header>
+              <Accordion.Header>Tudom változtatni a foglalás után küldött emailek tartalmát?</Accordion.Header>
               <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Természetesen! Menj a törzsadatok változtatása opcióra az adott eseményen belül, és fogalmazd meg saját üzenetedet, vagy tölts fel word templatet!
               </Accordion.Body>
             </Accordion.Item>
 
             <Accordion.Item eventKey="4">
-              <Accordion.Header>Kérdés 5?</Accordion.Header>
+              <Accordion.Header>Le tudok mondani eseményeket, ha mér foglaltak rá?</Accordion.Header>
               <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Sajnos erre jelenleg alkalmazásunkban még nincs opció, de igyekszünk a jövőben minél hamarabb bővíteni a weboldal funkcionalitási listáját.
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>

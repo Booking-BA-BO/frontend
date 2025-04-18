@@ -20,6 +20,7 @@ import HeaderNoAuth from "./components/HeaderNoAuth";
 import ContactPage from "./pages/ContactPage";
 import Faq from "./pages/Faq";
 import ModifyEvent from "./pages/ModifyEvent";
+import ModifyEventHost from "./pages/ModifyEventHost";
 
 export default function App() {
   const { user } = useContext(AppContext);
@@ -38,9 +39,8 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/modifyevent/:event_id" element={<ModifyEvent />} />
-          <Route path="/event-form" element={<ModifyEvent />} />
-          <Route path="/event-hosts" element={<ModifyEvent />} />
-          <Route path="/reservations" element={<ModifyEvent />} />
+          <Route path="/event-hosts/:event_id" element={<ModifyEventHost />} />
+          <Route path="/reservations/:event_id" element={<ModifyEvent />} />
         </Route>
       </Routes>
       <Footer />
