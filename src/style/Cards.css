@@ -3,14 +3,20 @@
   justify-content: center;
 }
 
+/* .cards-content{
+  max-width: 80%;
+  margin: auto;
+} */
+
 .cimEsNav {
   margin-top: 25px;
   padding-top: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   max-width: 80%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .cimEsNav a {
@@ -127,7 +133,7 @@
 }
 
 .osszes-esemeny {
-  max-width: 100%;
+  /* max-width: 100%; */
   padding: 0 10px;
   margin: 0 auto;
   display: flex;
