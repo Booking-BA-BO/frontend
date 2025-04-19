@@ -21,6 +21,7 @@ import ContactPage from "./pages/ContactPage";
 import Faq from "./pages/Faq";
 import ModifyEvent from "./pages/ModifyEvent";
 import ModifyEventHost from "./pages/ModifyEventHost";
+import CalendarProfile from "./pages/CalendarProfile";
 
 export default function App() {
   const { user } = useContext(AppContext);
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/login" element={user ? <LoginPage /> : <LoginPage />} />
           <Route path="/profile" element={<Profil />} />
           <Route path="/profile/modify" element={<ModifyPage />} />
+          <Route path="/profile/calendar/:egyeni_vegpont" element={<CalendarProfile />} />
           <Route path="/profile/events" element={<AllEvents />} />
           <Route path="/:endpoint" element={<ReservationPage />} />
           <Route path="/contact" element={<ContactPage />} />

@@ -66,9 +66,9 @@
   display: none;
   margin: 5px 5px 10px 5px;
   padding: 10px;
-  border: 1px solid rgb(129, 191, 182);
+  border: 1px solid #81bfb6;
   border-radius: 10px;
-  background-color: rgb(198, 230, 227);
+  background-color: #c6e6e3;
   color: white;
 }
 

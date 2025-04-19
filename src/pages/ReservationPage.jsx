@@ -3,11 +3,14 @@ import { useParams } from "react-router-dom";
 import { myAxios } from "../api/axios";
 import ReservationOptions from "../components/ReservationOptions";
 import "../style/reservation.css";
+import MyCalendar from "../components/Calendar";
 
 function ReservationPage() {
   const { endpoint } = useParams();
   const [user, setUser] = useState([]);
   const [events, setEvents] = useState([]);
+  const [times, setTimes] = useState([]);
+  
 
   const getAdat = async (vegpont, asyFgv) => {
     try {
@@ -21,6 +24,7 @@ function ReservationPage() {
   useEffect(() => {
     getAdat(`/api/reservation/${endpoint}`, setEvents);
     getAdat(`/api/user-data/${endpoint}`, setUser);
+    getAdat(`/api/all-host-dates/${endpoint}`, setTimes);
   }, [endpoint]);
   return (
     <>
@@ -32,6 +36,11 @@ function ReservationPage() {
             return <ReservationOptions elem={elem} key={index} index={index} />;
           })}
         </div>
+
+        <div>
+          <MyCalendar times={times}/>;
+        </div>
+
         <h2>Jelentkezz!</h2>
 
         <div className="date-time-picker-container"></div>
