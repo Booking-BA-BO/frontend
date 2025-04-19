@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { myAxios } from '../api/axios';
+import axios from 'axios';
 
 function EventForm() {
   const { event_id } = useParams();
@@ -51,8 +52,25 @@ function EventForm() {
     }));
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.patch(`/api/modify-event/${event_id}`, {
+        nev: formData.nev,
+        leiras: formData.leiras,
+        hely: formData.hely,
+        kapacitas: formData.kapacitas,
+        ar: formData.ar,
+        foglalastol: formData.foglalastol,
+        foglalasig: formData.foglalasig
+      });
+    } catch (err) {
+      console.error("Nem sikerült menteni az eseményt", err);
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="nev">Név</label>
         <input type="text" id="nev" name="nev" value={formData.nev} onChange={handleChange} required />
