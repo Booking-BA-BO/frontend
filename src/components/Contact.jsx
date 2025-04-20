@@ -80,7 +80,7 @@ const Contact = () => {
                 <h1 className="icon">
                   <FontAwesomeIcon icon={faEnvelope} />
                 </h1>
-                <p>borsikaaa1@gmail.com</p>
+                <p>bookit.foglalasinfo@gmail.com</p>
               </div>
               <div className="telefonszam">
                 <h1 className="icon">
