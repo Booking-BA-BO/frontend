@@ -1,0 +1,9 @@
+.modify-event-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.event-form-MAIN {
+    margin: auto;
+    width: 100%;
+}
