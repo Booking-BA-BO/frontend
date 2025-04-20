@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import "../style/Profil.css";
 import { AppContext } from "../Context/AppContext";
+import { useState } from "react";
+import { myAxios } from "../api/axios";
 
 function ProfilNavigation() {
   const { user } = useContext(AppContext);
+
   return (
     <nav className="profil-navigacio">
       <ul>
@@ -17,7 +20,7 @@ function ProfilNavigation() {
           <a href="/profile/events">Minden eseményem</a>
         </li>
         <li className="passive">
-          <a href="/stats">Statisztika</a>
+          <a href={`/profile/calendar/${user?.egyeni_vegpont}`}>Naptáram</a>
         </li>
         <li className="passive">
           <a href="/settings">Beállítások</a>
