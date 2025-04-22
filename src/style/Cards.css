@@ -124,7 +124,6 @@
 }
 
 .minden-mutat-gomb:hover{
-  color: #0400ff;
   border-bottom: 2px solid #81bfb7;
   font-weight: bolder;
   cursor: pointer;
