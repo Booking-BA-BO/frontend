@@ -16,7 +16,7 @@ const CardComponent = (props) => {
       <div className="kartya-lablec">
         {props.elem.ar} Ft{" "}
         <a href={'/modifyevent/' + props.elem.esemeny_id}>
-        <button className="kartya-gomb">↪</button>
+        <button className="kartya-gomb"><img src="/icons/nyil.svg" alt="nyíl ikon" className="ikon" /></button>
         </a>
       </div>
     </div>

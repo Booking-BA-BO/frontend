@@ -19,7 +19,7 @@ const HeaderNoAuth = () => {
         </div>
 
         <div className="headerMid">
-          <a href="#">
+          <a href="/documentation">
             <h5>Felfedezés</h5>
           </a>
           <a href="/contact">

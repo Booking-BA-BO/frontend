@@ -28,6 +28,13 @@
     color: rgb(165, 165, 165);
 }
 
+h5 {
+    color: black;
+    margin: 20px 0;
+    font-weight: bold;
+    text-align: left;
+}
+
 .profil-szerkesztes > p {
     padding: 10px;
 }
@@ -84,20 +91,21 @@
     align-items: center;
     padding: 10px;
     border-radius: 5px;
+    text-align: left;
+}
+
+.szemelyes-link > h5{
+    color: #81bfb7;
 }
 
 .copy-button {
     margin-left: 10px;
     padding: 5px 10px;
-    background-color: #81bfb7;
+    background-color: white;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
-  }
-  
-  .copy-button:hover {
-    background-color: #58827c;
   }
