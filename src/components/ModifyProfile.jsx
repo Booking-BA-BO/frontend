@@ -67,7 +67,7 @@ function ModifyProfile() {
                 )
               }
             >
-              Másolás a vágólapra
+              <img src="/icons/masolas.svg" alt="nyíl ikon" className="ikon" style={{width: '35px', height: '35px', display: 'inline-block'}}/>
             </button>
           </div>
 
