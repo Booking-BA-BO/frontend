@@ -12,7 +12,7 @@ const NoAuthHamburger = () => {
         <nav className="menu">
           <ul>
             <li>
-              <a href="/contact">Felfedezés</a>
+              <a href="/documentation">Felfedezés</a>
             </li>
             <li>
               <a href="/contact">Kontakt</a>

@@ -22,6 +22,7 @@ import Faq from "./pages/Faq";
 import ModifyEvent from "./pages/ModifyEvent";
 import ModifyEventHost from "./pages/ModifyEventHost";
 import CalendarProfile from "./pages/CalendarProfile";
+import Documentation from "./pages/Documentation";
 
 export default function App() {
   const { user } = useContext(AppContext);
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/modifyevent/:event_id" element={<ModifyEvent />} />
           <Route path="/event-hosts/:event_id" element={<ModifyEventHost />} />
           <Route path="/reservations/:event_id" element={<ModifyEvent />} />
+          <Route path="/documentation" element={<Documentation />} />
         </Route>
       </Routes>
       <Footer />
