@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { addMinutes, format, isBefore, isSameDay, eachDayOfInterval } from 'date-fns';
+import { useParams } from 'react-router-dom';
 
 const napokMap = ['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat', 'Vasárnap'];
 
 const AddHostEvent = () => {
+  const event_id = useParams();
   const [kezdoDatum, setKezdoDatum] = useState('');
   const [vegDatum, setVegDatum] = useState('');
   const [napok, setNapok] = useState([]);
@@ -13,8 +15,6 @@ const AddHostEvent = () => {
   const [mutasdSzunet, setMutasdSzunet] = useState(false);
   const [szunet, setSzunet] = useState('');
   const [esemenyek, setEsemenyek] = useState([]);
-
-  const today = format(new Date(), 'yyyy-MM-dd'); // Mai dátum formázása
 
   const handleNapValtas = (nap) => {
     if (napok.includes(nap)) {
@@ -27,62 +27,53 @@ const AddHostEvent = () => {
   const handleKezdoDatumValtas = (e) => {
     const value = e.target.value;
     setKezdoDatum(value);
-    setVegDatum(value); // automatikus szinkron
+    setVegDatum(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     // Validáció
     if (!kezdoDatum || !vegDatum || !tolIdo || !igIdo || !intervallum) {
       console.warn('Hiányzó mezők. Kérlek tölts ki minden kötelező mezőt.');
       return;
     }
-
+  
     const intervallumPerc = parseInt(intervallum, 10);
     const szunetPerc = szunet ? parseInt(szunet, 10) : 0;
-
+  
     if (intervallumPerc <= 0) {
       console.warn('Az intervallum értéke érvénytelen.');
       return;
     }
-
+  
     const kezdIdo = new Date(`${kezdoDatum}T${tolIdo}`);
     const vegIdo = new Date(`${kezdoDatum}T${igIdo}`);
-
+  
     if (kezdIdo >= vegIdo) {
       console.warn('A kezdési időnek korábbinak kell lennie, mint a zárási idő.');
       return;
     }
-
-    // Ha több napos és nincs kiválasztva nap
-    if (kezdoDatum !== vegDatum && napok.length === 0) {
-      console.warn('Több napos tartomány esetén legalább egy napot ki kell választani.');
-      return;
-    }
-
+  
     const eredmeny = [];
-
     const kulonbseg = (vegIdo - kezdIdo) / 60000;
-
+  
     if (kezdoDatum === vegDatum && kulonbseg >= intervallumPerc) {
-      // Ha ugyanazon a napon több eseményt szeretnénk
       let aktualisKezdes = new Date(`${kezdoDatum}T${tolIdo}`);
       const aktualisVeg = new Date(`${kezdoDatum}T${igIdo}`);
-      
+  
       while (isBefore(aktualisKezdes, aktualisVeg)) {
         const esemenyKezdes = aktualisKezdes;
         const esemenyVege = addMinutes(esemenyKezdes, intervallumPerc);
-
+  
         if (isBefore(esemenyVege, aktualisVeg) || +esemenyVege === +aktualisVeg) {
           eredmeny.push({
-            datum: kezdoDatum,
+            datum: format(esemenyKezdes, 'yyyy-MM-dd HH:mm:ss'),
             kezdes: format(esemenyKezdes, 'HH:mm'),
             befejezes: format(esemenyVege, 'HH:mm'),
+            nyitva: 0,
           });
-
-          // Állítsuk be a következő esemény kezdetét
-          aktualisKezdes = addMinutes(esemenyVege, szunetPerc); // Szünettel, ha van
+          aktualisKezdes = addMinutes(esemenyVege, szunetPerc);
         } else {
           break;
         }
@@ -90,29 +81,30 @@ const AddHostEvent = () => {
     } else {
       const napokLista = eachDayOfInterval({
         start: new Date(kezdoDatum),
-        end: new Date(vegDatum)
+        end: new Date(vegDatum),
       });
-
+  
       napokLista.forEach((napDatum) => {
-        const napIndex = napDatum.getDay(); // 0-6
+        const napIndex = napDatum.getDay();
         const napNeve = napokMap[napIndex === 0 ? 6 : napIndex - 1];
-
+  
         if (napok.includes(napNeve)) {
           const baseDatum = format(napDatum, 'yyyy-MM-dd');
           let aktualisKezdes = new Date(`${baseDatum}T${tolIdo}`);
           const aktualisVeg = new Date(`${baseDatum}T${igIdo}`);
-
-          while (isBefore(aktualisKezdes, aktualisVeg) || isSameDay(aktualisKezdes, aktualisVeg)) {
+  
+          while (isBefore(addMinutes(aktualisKezdes, intervallumPerc), aktualisVeg) || isSameDay(aktualisKezdes, aktualisVeg)) {
             const esemenyKezdes = aktualisKezdes;
             const esemenyVege = addMinutes(esemenyKezdes, intervallumPerc);
-
+  
             if (isBefore(esemenyVege, aktualisVeg) || +esemenyVege === +aktualisVeg) {
               eredmeny.push({
-                datum: baseDatum,
+                datum: format(esemenyKezdes, 'yyyy-MM-dd HH:mm:ss'),
                 kezdes: format(esemenyKezdes, 'HH:mm'),
                 befejezes: format(esemenyVege, 'HH:mm'),
+                nyitva: 0,
               });
-
+  
               aktualisKezdes = addMinutes(esemenyVege, szunetPerc);
             } else {
               break;
@@ -122,22 +114,51 @@ const AddHostEvent = () => {
       });
     }
 
-    // 🔥 Végső eredmény kiírás konzolra
-    console.log('✅ Validált események:', eredmeny);
-    setEsemenyek(eredmeny);
-  };
+    console.log('Küldött adatok minden egyes eseményhez:');
+    
+    eredmeny.forEach((esemeny, index) => {
+      console.log(`Küldés ${index + 1}. esemény:`, {
+        esemeny_id: event_id.event_id,
+        datum: esemeny.datum,
+        kezdes: esemeny.kezdes,
+        befejezes: esemeny.befejezes,
+        nyitva: esemeny.nyitva,
+      });
+  
+      fetch('/api/add-event', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          esemeny_id: event_id.event_id,
+          datum: esemeny.datum,
+          kezdes: esemeny.kezdes,
+          befejezes: esemeny.befejezes,
+          nyitva: esemeny.nyitva,
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(`${index + 1}. esemény sikeresen mentve:`, data);
+      })
+      .catch(error => {
+        console.error(`${index + 1}. esemény küldése közben hiba történt:`, error);
+      });
+    });
+  };  
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
         Kezdő dátum (tól):
-        <input type="date" value={kezdoDatum} onChange={handleKezdoDatumValtas} min={today} />
+        <input type="date" value={kezdoDatum} onChange={handleKezdoDatumValtas} />
       </label>
       <br />
 
       <label>
         Vég dátum (ig):
-        <input type="date" value={vegDatum} onChange={(e) => setVegDatum(e.target.value)} min={today} />
+        <input type="date" value={vegDatum} onChange={(e) => setVegDatum(e.target.value)} />
       </label>
       <br />
 
