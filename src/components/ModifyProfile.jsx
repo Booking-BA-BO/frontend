@@ -114,7 +114,7 @@ function ModifyProfile() {
           <div className="jelszo-valtoztatas-div">
             <div className="jelszo-valtoztatas-es-utoljara-valtoztatott">
               <h6>Jelszó változtatás</h6>
-              <p>Legutóbb változtatva: {formatDate(user.updated_at)}</p>
+              <p>Legutóbb változtatva: {formatDate(user.password_change)}</p>
             </div>
             <form action="">
               <div className="jelszo-valtoztatas-form">
