@@ -1,0 +1,112 @@
+.form-mentes {
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+  
+  .form-mentes label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .input-kezdo-datum,
+  .input-veg-datum,
+  .input-tol-ido,
+  .input-ig-ido,
+  .input-intervallum,
+  .input-szunet {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .input-kezdo-datum:focus,
+  .input-veg-datum:focus,
+  .input-tol-ido:focus,
+  .input-ig-ido:focus,
+  .input-intervallum:focus,
+  .input-szunet:focus {
+    border-color: #81bfb7;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(129, 191, 183, 0.3);
+  }
+  
+  .fieldset-napok {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    background-color: #fff;
+  }
+  
+  .legend-napok {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .checkbox-nap {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .input-nap {
+    margin-right: 0.5rem;
+  }
+  
+  .button-toggle-szunet {
+    background-color: transparent;
+    color: #81bfb7;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .button-toggle-szunet:hover {
+    text-decoration: underline;
+  }
+  
+  .button-mentes {
+    background-color: #81bfb7;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-mentes:hover {
+    background-color: #6aa9a2;
+  }
+  
+  @media (max-width: 600px) {
+    .form-mentes {
+      padding: 1.5rem;
+    }
+  
+    .form-mentes input {
+      padding: 0.6rem 0.8rem;
+      font-size: 0.95rem;
+    }
+  
+    .button-mentes {
+      width: 100%;
+      padding: 0.8rem;
+    }
+  }
+  

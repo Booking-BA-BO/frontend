@@ -28,7 +28,15 @@ import ReservationLayout from "./layouts/ReservationLayout";
 export default function App() {
   const { user } = useContext(AppContext);
   const location = useLocation();
-  const isReservationRoute = /^\/[^/]+$/.test(location.pathname);
+  //Ha az route után nincs semmi, pl(http://localhost:5173/profile) akkor vedd fel ide hogy ne tegye rá a foglalási oldal Layout-ot.
+  const isReservationRoute = /^\/[^/]+$/.test(location.pathname) && ![
+    "/login",
+    "/register",
+    "/profile",
+    "/contact",
+    "/faq",
+    "/documentation"
+  ].includes(location.pathname);
 
   return (
     <>
