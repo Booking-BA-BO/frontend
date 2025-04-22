@@ -100,7 +100,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .introductionText > h1 {
     font-size: 40px;
   }

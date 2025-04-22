@@ -28,20 +28,21 @@ export default function Cards() {
             <h3>{showAll ? "Kevesebbet mutass" : "Mindent mutass"}</h3>
           </a>
         </div>
-        <div className="kartyak">
-          {topEsemenyek.map((elem, index) => {
-            return <CardComponent elem={elem} key={index} index={index} />;
-          })}
-          <PlusCardComponent />
-        </div>
-        
+        {!showAll && (
+          <div className="kartyak">
+            {topEsemenyek.map((elem, index) => {
+              return <CardComponent elem={elem} key={index} index={index} />;
+            })}
+            <PlusCardComponent />
+          </div>
+        )}
         {showAll && (
           <div className="osszes-esemeny">
-            <h2>Összes esemény</h2>
             <div className="osszes-kartyak">
               {esemenyek.map((elem, index) => {
                 return <CardComponent elem={elem} key={index} index={index} />;
               })}
+              <PlusCardComponent />
             </div>
           </div>
         )}
