@@ -55,10 +55,10 @@ function ModifyProfile() {
         <div className="profil-szerkesztes">
           
           <div className="szemelyes-link">
-            <h2>
-              AZ ÉN SZEMÉLYES OLDALAM: http://localhost:5173/
+            <h5>
+              A személyes oldalam linkje: http://localhost:5173/
               {user.egyeni_vegpont}
-            </h2>
+            </h5>
             <button
               className="copy-button"
               onClick={() =>
