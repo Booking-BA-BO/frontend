@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Cards from "./pages/Cards";
-import Layout from "./pages/Layout";
+import Layout from "./layouts/Layout";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import { useContext } from "react";
