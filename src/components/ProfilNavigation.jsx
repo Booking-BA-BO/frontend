@@ -19,9 +19,22 @@ function ProfilNavigation() {
     <>
       <nav className="profil-navigacio">
         <ul>
-          <div>
-            <h1>{user?.name}</h1>
-          </div>
+          <li>
+            <a href="/profile" onClick={() => handleLinkClick("profile")}>
+              <img
+                className="profil-kep"
+                src="https://placehold.co/150x150"
+                alt="Profilkép"
+              />
+            </a>
+          </li>
+          <li>
+            <div>
+              <a className="profil-gomb-nev" href="/profile">
+                <h1>{user?.name}</h1>
+              </a>
+            </div>
+          </li>
           <li className={activeLink === "modify" ? "active" : "passive"}>
             <a href="/profile/modify" onClick={() => handleLinkClick("modify")}>
               Profilom szerkesztése
@@ -48,7 +61,7 @@ function ProfilNavigation() {
         </ul>
       </nav>
       <div className="profil-navigacio-dropdown-kulso">
-      <h1>{user?.name}</h1>
+        <h1>{user?.name}</h1>
         <button
           className="dropdown-toggle"
           onClick={toggleDropdown}
@@ -84,10 +97,7 @@ function ProfilNavigation() {
                 </a>
               </li>
               <li className={activeLink === "settings" ? "active" : "passive"}>
-                <a
-                  href="/settings"
-                  onClick={() => handleLinkClick("settings")}
-                >
+                <a href="/settings" onClick={() => handleLinkClick("settings")}>
                   Beállítások
                 </a>
               </li>
