@@ -1,0 +1,107 @@
+.event-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .event-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .event-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .event-form input,
+  .event-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .event-form input:focus,
+  .event-form textarea:focus {
+    border-color: #81bfb7;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(129, 191, 183, 0.3);
+  }
+  
+  .event-form .submit button {
+    background-color: #81bfb7;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .event-form .submit button:hover {
+    background-color: #6aa9a2;
+  }
+  
+  @media (max-width: 600px) {
+    .event-form {
+      padding: 1.5rem;
+    }
+  
+    .event-form input,
+    .event-form textarea {
+      padding: 0.6rem 0.8rem;
+      font-size: 0.95rem;
+    }
+  
+    .event-form .submit button {
+      width: 100%;
+      padding: 0.8rem;
+    }
+  }
+  
+
+  .info-icon {
+    margin-left: 0.5rem;
+    cursor: help;
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    color: #81bfb7;
+  }
+  
+  .info-icon::after {
+    content: attr(data-tooltip);
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    max-width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    z-index: 10;
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease;
+    font-size: 0.85rem;
+    white-space: normal;
+    pointer-events: none;
+  }
+  
+  .info-icon:hover::after {
+    visibility: visible;
+    opacity: 1;
+  }

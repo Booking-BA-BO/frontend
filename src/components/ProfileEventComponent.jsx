@@ -7,14 +7,15 @@ function ProfileEventComponent() {
   const { esemenyek } = useApiContext();
   return (
     <>
-      <table>
-        <thead>
-          <tr>
+      <table className="minden-esemeny-tabla">
+        <thead className="minden-esemeny-tabla-fejlec">
+          <tr className="minden-esemeny-tabla-fejlec-sor">
             <th>Név</th>
             <th>Ár</th>
             <th>Hely</th>
             <th>Idő</th>
             <th>Kapacitás</th>
+            <th>Szerkesztés</th>
           </tr>
         </thead>
         {esemenyek.map((elem, index) => {

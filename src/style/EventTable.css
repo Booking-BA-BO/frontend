@@ -1,8 +1,75 @@
-table {
-  margin: auto;
-  padding: 15px;
+.minden-esemeny-tabla {
+  border-collapse: collapse;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
 }
 
-table > thead > tr > th {
-  padding: 30px;
+.minden-esemeny-tabla-fejlec {
+  background-color: #81bfb7;
+  color: white;
+}
+
+.minden-esemeny-tabla-fejlec-sor th {
+  padding: 12px 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.minden-esemeny-tabla tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.minden-esemeny-tabla tbody tr:nth-child(even) {
+  background-color: #c6e6e3;
+}
+
+.minden-esemeny-tabla tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.minden-esemeny-tabla > tbody, td {
+    padding: 10px 15px;
+  }
+
+.minden-esemeny-tabla tbody td:first-child {
+  font-weight: bold;
+  color: #333;
+}
+
+.minden-esemeny-tabla tbody tr:last-child {
+  border-bottom: 2px solid #c6e6e3;
+}
+
+@media (max-width: 1250px) {
+  .minden-esemeny-tabla {
+    margin: auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .minden-esemeny-tabla {
+    font-size: 16px;
+  }
+
+  .minden-esemeny-tabla-fejlec-sor th,
+  .minden-esemeny-tabla tbody td {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .minden-esemeny-tabla {
+    font-size: 14px;
+  }
+
+  .minden-esemeny-tabla-fejlec-sor th,
+  .minden-esemeny-tabla tbody td {
+    padding: 8px 10px;
+  }
 }

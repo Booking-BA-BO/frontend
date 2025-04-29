@@ -131,3 +131,16 @@ main{
       text-align: center;
     }
   }
+
+
+
+
+.success-message {
+  color: green;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}

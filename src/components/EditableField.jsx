@@ -23,12 +23,12 @@ function EditableField({ name, id, label, value, onChange }) {
               value={tempValue}
               onChange={(e) => setTempValue(e.target.value)}
             />
-            <button onClick={handleSave} className="modify-gomb">✅</button>
+            <button onClick={handleSave} className="modify-gomb"><img src="/icons/ok.svg" alt="ok ikon"/></button>
           </>
         ) : (
           <>
             {value}
-            <button onClick={() => setIsEditing(true)} className="modify-gomb">✏️</button>
+            <button onClick={() => setIsEditing(true)} className="modify-gomb"> <img src="/icons/ceruza.svg" alt="ceruza ikon" className="ikon" style={{width: '20px', height: '20px', display: 'inline-block'}}/></button>
           </>
         )}
       </p>

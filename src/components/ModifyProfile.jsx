@@ -53,9 +53,24 @@ function ModifyProfile() {
       <div className="profiladatok">
         <h3>Adataim szerkesztése</h3>
         <div className="profil-szerkesztes">
-          <h2>
-            AZ ÉN SZEMÉLYES OLDALAM: http://localhost:5173/{user.egyeni_vegpont}
-          </h2>
+          
+          <div className="szemelyes-link">
+            <h5>
+              A személyes oldalam linkje: http://localhost:5173/
+              {user.egyeni_vegpont}
+            </h5>
+            <button
+              className="copy-button"
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  `http://localhost:5173/${user.egyeni_vegpont}`
+                )
+              }
+            >
+              <img src="/icons/masolas.svg" alt="nyíl ikon" className="ikon" style={{width: '35px', height: '35px', display: 'inline-block'}}/>
+            </button>
+          </div>
+
           <EditableField
             name="name"
             id="name"
@@ -99,7 +114,7 @@ function ModifyProfile() {
           <div className="jelszo-valtoztatas-div">
             <div className="jelszo-valtoztatas-es-utoljara-valtoztatott">
               <h6>Jelszó változtatás</h6>
-              <p>Legutóbb változtatva: {formatDate(user.updated_at)}</p>
+              <p>Legutóbb változtatva: {formatDate(user.password_change)}</p>
             </div>
             <form onSubmit={handlePasswordSubmit}>
               <div className="jelszo-valtoztatas-form">

@@ -8,7 +8,7 @@ const WelcomeText = () => {
         <h6>A BookIT egyszerűsíti a dolgokat, hogy te arra koncentrálhass, ami igazán fontos. Regisztrálj most, és használd ki a legújabb funkcióinkat, amelyek segítenek minden pillanatot a legjobban kihasználni.</h6>
         <div className="buttonsIntroduction">
             <a href="/register">Regisztráció</a>
-            <a href="#">További információ</a>
+            <a href="/documentation">További információ</a>
         </div>
         <div>
             <h3>Funkciók:</h3>

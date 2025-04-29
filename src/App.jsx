@@ -1,8 +1,8 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Cards from "./pages/Cards";
-import Layout from "./pages/Layout";
+import Layout from "./layouts/Layout";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import { useContext } from "react";
@@ -12,7 +12,6 @@ import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import Profil from "./pages/Profil";
-import { ApiProvider } from "./Context/ApiContext";
 import "./style/Profil.css";
 import ModifyPage from "./pages/ModifyPage";
 import AllEvents from "./pages/AllEventsPage";
@@ -21,27 +20,56 @@ import HeaderNoAuth from "./components/HeaderNoAuth";
 import ContactPage from "./pages/ContactPage";
 import Faq from "./pages/Faq";
 import ModifyEvent from "./pages/ModifyEvent";
+import ModifyEventHost from "./pages/ModifyEventHost";
+import CalendarProfile from "./pages/CalendarProfile";
+import Documentation from "./pages/Documentation";
+import ReservationLayout from "./layouts/ReservationLayout";
 
 export default function App() {
   const { user } = useContext(AppContext);
+  const location = useLocation();
+  //Ha az route után nincs semmi, pl(http://localhost:5173/profile) akkor vedd fel ide hogy ne tegye rá a foglalási oldal Layout-ot.
+  const isReservationRoute = /^\/[^/]+$/.test(location.pathname) && ![
+    "/login",
+    "/register",
+    "/profile",
+    "/contact",
+    "/faq",
+    "/documentation"
+  ].includes(location.pathname);
+
   return (
     <>
-      {user ? <Header /> : <HeaderNoAuth />}
+      {!isReservationRoute && (user ? <Header /> : <HeaderNoAuth />)}
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={user ? <Cards /> : <Welcome />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={user ? <LoginPage /> : <LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/profile" element={<Profil />} />
           <Route path="/profile/modify" element={<ModifyPage />} />
+          <Route path="/profile/calendar/:egyeni_vegpont" element={<CalendarProfile />} />
           <Route path="/profile/events" element={<AllEvents />} />
-          <Route path="/:endpoint" element={<ReservationPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<Faq />} />
-          <Route path="/modifyevent" element={<ModifyEvent />} />
+          <Route path="/modifyevent/:event_id" element={<ModifyEvent />} />
+          <Route path="/event-hosts/:event_id" element={<ModifyEventHost />} />
+          <Route path="/reservations/:event_id" element={<ModifyEvent />} />
+          <Route path="/documentation" element={<Documentation />} />
         </Route>
+
+        <Route
+          path="/:endpoint"
+          element={
+            <ReservationLayout>
+              <ReservationPage />
+            </ReservationLayout>
+          }
+        />
       </Routes>
-      <Footer />
+
+      {!isReservationRoute && <Footer />}
     </>
   );
 }
