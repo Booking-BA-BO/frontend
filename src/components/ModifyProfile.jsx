@@ -7,11 +7,11 @@ import axios from "axios";
 function ModifyProfile() {
   const { user } = useContext(AppContext);
   const [userAdatok, setUserAdatok] = useState({
-      name: user?.name || '',
-      vezetek_nev: user?.vezetek_nev || '',
-      kereszt_nev: user?.kereszt_nev || '',
-      email: user?.email || '',
-      telefon: user?.telefon || ''
+    name: user?.name || "",
+    vezetek_nev: user?.vezetek_nev || "",
+    kereszt_nev: user?.kereszt_nev || "",
+    email: user?.email || "",
+    telefon: user?.telefon || "",
   });
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function ModifyProfile() {
   const HandleChange = async (id, value) => {
     setUserAdatok((prevData) => ({
       ...prevData,
-      [id]: value
+      [id]: value,
     }));
 
     try {
@@ -30,13 +30,13 @@ function ModifyProfile() {
       });
 
       if (response.status === 200) {
-        console.log('Felhasználói adatok sikeresen frissítve:', response.data);
+        console.log("Felhasználói adatok sikeresen frissítve:", response.data);
       }
     } catch (error) {
-      console.error('Hiba történt az adatfrissítés közben:', error);
+      console.error("Hiba történt az adatfrissítés közben:", error);
     }
   };
-  
+
   const formatDate = (iso) => {
     const date = new Date(iso);
     const year = date.getFullYear();
@@ -57,42 +57,42 @@ function ModifyProfile() {
             AZ ÉN SZEMÉLYES OLDALAM: http://localhost:5173/{user.egyeni_vegpont}
           </h2>
           <EditableField
-            name = "name"
+            name="name"
             id="name"
             label="Felhasználónév"
             value={userAdatok.name}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
           <EditableField
-            name = "email"
+            name="email"
             id="email"
             label="Email cím"
             value={userAdatok.email}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
 
           <EditableField
-            name = "vezetek_nev"
+            name="vezetek_nev"
             id="vezetek_nev"
             label="Vezeték név"
             value={userAdatok.vezetek_nev}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
 
           <EditableField
-            name = "kereszt_nev"
+            name="kereszt_nev"
             id="kereszt_nev"
             label="Kereszt név"
             value={userAdatok.kereszt_nev}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
 
           <EditableField
-            name = "telefon"
+            name="telefon"
             id="telefon"
             label="Telefonszám"
             value={userAdatok.telefon}
-            onChange={HandleChange} 
+            onChange={HandleChange}
           />
 
           <h6></h6>
@@ -101,28 +101,45 @@ function ModifyProfile() {
               <h6>Jelszó változtatás</h6>
               <p>Legutóbb változtatva: {formatDate(user.updated_at)}</p>
             </div>
-            <form action="">
+            <form onSubmit={handlePasswordSubmit}>
               <div className="jelszo-valtoztatas-form">
                 <div>
-                  <label htmlFor="">Jelenlegi jelszó:</label>
+                  <label htmlFor="current_password">Jelenlegi jelszó:</label>
                 </div>
                 <div>
-                  <input type="text" />
+                  <input
+                    type="password"
+                    name="current_password"
+                    value={passwordForm.current_password}
+                    onChange={handlePasswordChange}
+                  />
                 </div>
                 <div>
-                  <label htmlFor="">Új jelszó:</label>
+                  <label htmlFor="new_password">Új jelszó:</label>
                 </div>
                 <div>
-                  <input type="text" />
+                  <input
+                    type="password"
+                    name="new_password"
+                    value={passwordForm.new_password}
+                    onChange={handlePasswordChange}
+                  />
                 </div>
                 <div>
-                  <label htmlFor="">Új jelszó mégegyszer:</label>
+                  <label htmlFor="new_password_confirmation">
+                    Új jelszó mégegyszer:
+                  </label>
                 </div>
                 <div>
-                  <input type="text" />
+                  <input
+                    type="password"
+                    name="new_password_confirmation"
+                    value={passwordForm.new_password_confirmation}
+                    onChange={handlePasswordChange}
+                  />
                 </div>
               </div>
-              <button className="jelszo-valtoztatas-gomb">
+              <button className="jelszo-valtoztatas-gomb" type="submit">
                 Jelszó módosítása
               </button>
             </form>
@@ -133,6 +150,6 @@ function ModifyProfile() {
   }
 
   return null;
-  }
+}
 
 export default ModifyProfile;
