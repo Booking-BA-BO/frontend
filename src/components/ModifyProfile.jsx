@@ -6,6 +6,7 @@ import axios from "axios";
 
 function ModifyProfile() {
   const { user } = useContext(AppContext);
+
   const [userAdatok, setUserAdatok] = useState({
     name: user?.name || "",
     vezetek_nev: user?.vezetek_nev || "",
@@ -14,8 +15,16 @@ function ModifyProfile() {
     telefon: user?.telefon || "",
   });
 
+  const [passwordForm, setPasswordForm] = useState({
+    current_password: "",
+    new_password: "",
+    new_password_confirmation: "",
+  });
+
   useEffect(() => {
-    setUserAdatok({ ...user });
+    if (user) {
+      setUserAdatok({ ...user });
+    }
   }, [user]);
 
   const HandleChange = async (id, value) => {
@@ -37,6 +46,46 @@ function ModifyProfile() {
     }
   };
 
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    setPasswordForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handlePasswordSubmit = async (e) => {
+    e.preventDefault();
+
+    if (passwordForm.new_password !== passwordForm.new_password_confirmation) {
+      alert("Az új jelszavak nem egyeznek.");
+      return;
+    }
+
+    try {
+      const response = await axios.patch(`/api/change-password/${user.id}`, {
+        current_password: passwordForm.current_password,
+        new_password: passwordForm.new_password,
+        new_password_confirmation: passwordForm.new_password_confirmation,
+      });
+
+      if (response.status === 200) {
+        alert("Jelszó sikeresen megváltoztatva.");
+        setPasswordForm({
+          current_password: "",
+          new_password: "",
+          new_password_confirmation: "",
+        });
+      }
+    } catch (error) {
+      console.error("Hiba történt a jelszóváltoztatás során:", error);
+      alert(
+        error.response?.data?.message ||
+          "Hiba történt a jelszóváltoztatás közben."
+      );
+    }
+  };
+
   const formatDate = (iso) => {
     const date = new Date(iso);
     const year = date.getFullYear();
@@ -53,7 +102,6 @@ function ModifyProfile() {
       <div className="profiladatok">
         <h3>Adataim szerkesztése</h3>
         <div className="profil-szerkesztes">
-          
           <div className="szemelyes-link">
             <h5>
               A személyes oldalam linkje: http://localhost:5173/
@@ -67,7 +115,16 @@ function ModifyProfile() {
                 )
               }
             >
-              <img src="/icons/masolas.svg" alt="nyíl ikon" className="ikon" style={{width: '35px', height: '35px', display: 'inline-block'}}/>
+              <img
+                src="/icons/masolas.svg"
+                alt="másolás ikon"
+                className="ikon"
+                style={{
+                  width: "35px",
+                  height: "35px",
+                  display: "inline-block",
+                }}
+              />
             </button>
           </div>
 
@@ -85,7 +142,6 @@ function ModifyProfile() {
             value={userAdatok.email}
             onChange={HandleChange}
           />
-
           <EditableField
             name="vezetek_nev"
             id="vezetek_nev"
@@ -93,7 +149,6 @@ function ModifyProfile() {
             value={userAdatok.vezetek_nev}
             onChange={HandleChange}
           />
-
           <EditableField
             name="kereszt_nev"
             id="kereszt_nev"
@@ -101,7 +156,6 @@ function ModifyProfile() {
             value={userAdatok.kereszt_nev}
             onChange={HandleChange}
           />
-
           <EditableField
             name="telefon"
             id="telefon"
@@ -110,34 +164,53 @@ function ModifyProfile() {
             onChange={HandleChange}
           />
 
-          <h6></h6>
           <div className="jelszo-valtoztatas-div">
             <div className="jelszo-valtoztatas-es-utoljara-valtoztatott">
               <h6>Jelszó változtatás</h6>
               <p>Legutóbb változtatva: {formatDate(user.password_change)}</p>
             </div>
-            <form action="">
+            <form onSubmit={handlePasswordSubmit}>
               <div className="jelszo-valtoztatas-form">
                 <div>
-                  <label htmlFor="">Jelenlegi jelszó:</label>
+                  <label htmlFor="current_password">Jelenlegi jelszó:</label>
                 </div>
                 <div>
-                  <input type="text" />
+                  <input
+                    type="password"
+                    name="current_password"
+                    value={passwordForm.current_password}
+                    onChange={handlePasswordChange}
+                    required
+                  />
                 </div>
                 <div>
-                  <label htmlFor="">Új jelszó:</label>
+                  <label htmlFor="new_password">Új jelszó:</label>
                 </div>
                 <div>
-                  <input type="text" />
+                  <input
+                    type="password"
+                    name="new_password"
+                    value={passwordForm.new_password}
+                    onChange={handlePasswordChange}
+                    required
+                  />
                 </div>
                 <div>
-                  <label htmlFor="">Új jelszó mégegyszer:</label>
+                  <label htmlFor="new_password_confirmation">
+                    Új jelszó mégegyszer:
+                  </label>
                 </div>
                 <div>
-                  <input type="text" />
+                  <input
+                    type="password"
+                    name="new_password_confirmation"
+                    value={passwordForm.new_password_confirmation}
+                    onChange={handlePasswordChange}
+                    required
+                  />
                 </div>
               </div>
-              <button className="jelszo-valtoztatas-gomb">
+              <button className="jelszo-valtoztatas-gomb" type="submit">
                 Jelszó módosítása
               </button>
             </form>
