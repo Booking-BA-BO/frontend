@@ -19,17 +19,20 @@ export default function Register() {
     e.preventDefault();
     const res = await fetch("/api/register", {
       method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(formData),
     });
-
+  
     const data = await res.json();
-
-    if (data.errors) {
-      setErrors(data.errors);
-    } else {
+  
+    if (res.ok) {
       localStorage.setItem("token", data.token);
       setToken(data.token);
       navigate("/");
+    } else {
+      setErrors(data.errors);
     }
   }
 

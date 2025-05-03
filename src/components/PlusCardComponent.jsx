@@ -3,7 +3,7 @@ import NewForm from './NewForm';
 
 function PlusCardComponent() {
     const [isPopupVisible, setPopupVisible] = useState(false);
-
+    
     const showPopup = () => {
         setPopupVisible(true);
       };

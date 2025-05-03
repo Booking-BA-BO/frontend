@@ -2,3 +2,22 @@
     margin: auto;
     width: 40%;
 }
+
+@media (max-width: 1290px){
+    .add-host-event-MAIN{
+        width: 60%;
+    }
+}
+
+@media (max-width: 770px){
+    .add-host-event-MAIN{
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px){
+    .add-host-event-MAIN{
+        width: 95%;
+    }
+}
+
