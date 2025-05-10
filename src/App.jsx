@@ -15,7 +15,9 @@ import Profil from "./pages/Profil";
 import "./style/Profil.css";
 import ModifyPage from "./pages/ModifyPage";
 import AllEvents from "./pages/AllEventsPage";
-import ReservationPage from "./pages/ReservationPage";
+import ReservationLayout from "./layouts/ReservationLayout";
+import Reservations from "./components/Reservations";
+import ModifyReservationHost from "./pages/ModifyReservationHost";
 import HeaderNoAuth from "./components/HeaderNoAuth";
 import ContactPage from "./pages/ContactPage";
 import Faq from "./pages/Faq";
@@ -23,22 +25,24 @@ import ModifyEvent from "./pages/ModifyEvent";
 import ModifyEventHost from "./pages/ModifyEventHost";
 import CalendarProfile from "./pages/CalendarProfile";
 import Documentation from "./pages/Documentation";
-import ReservationLayout from "./layouts/ReservationLayout";
-import Reservations from "./components/Reservations";
-import ModifyReservaationHost from "./pages/ModifyReservationHost";
+import NotFound from "./pages/NotFound";
+import ValidateEndpoint from "./components/ValidateEndpoint";
+
 
 export default function App() {
   const { user } = useContext(AppContext);
   const location = useLocation();
-  //Ha az route után nincs semmi, pl(http://localhost:5173/profile) akkor vedd fel ide hogy ne tegye rá a foglalási oldal Layout-ot.
-  const isReservationRoute = /^\/[^/]+$/.test(location.pathname) && ![
-    "/login",
-    "/register",
-    "/profile",
-    "/contact",
-    "/faq",
-    "/documentation"
-  ].includes(location.pathname);
+
+  const isReservationRoute =
+    /^\/[^/]+$/.test(location.pathname) &&
+    ![
+      "/login",
+      "/register",
+      "/profile",
+      "/contact",
+      "/faq",
+      "/documentation"
+    ].includes(location.pathname);
 
   return (
     <>
@@ -58,7 +62,7 @@ export default function App() {
           <Route path="/modifyevent/:event_id" element={<ModifyEvent />} />
           <Route path="/event-hosts/:event_id" element={<ModifyEventHost />} />
           <Route path="/reservations/:event_id" element={<Reservations />} />
-          <Route path="/reservation-hosts/:event_id" element={<ModifyReservaationHost />} />
+          <Route path="/reservation-hosts/:event_id" element={<ModifyReservationHost />} />
           <Route path="/documentation" element={<Documentation />} />
         </Route>
 
@@ -66,10 +70,13 @@ export default function App() {
           path="/:endpoint"
           element={
             <ReservationLayout>
-              <ReservationPage />
+              <ValidateEndpoint />
             </ReservationLayout>
           }
         />
+
+        {/* Catch-all 404 route */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       {!isReservationRoute && <Footer />}
