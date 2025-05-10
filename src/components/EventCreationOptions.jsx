@@ -14,7 +14,7 @@ function EventCreationOptions() {
                         <a href={'/event-hosts/'+ event_id}>Esemény időpontjai</a>
                     </li>
                     <li className='event-creation-options-list-item'>
-                        <a href={'/reservations/'+ event_id}>Foglalások kezelése</a>
+                        <a href={'/reservation-hosts/'+ event_id}>Foglalások kezelése</a>
                     </li>
                 </ul>
             </nav>
