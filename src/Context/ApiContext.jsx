@@ -8,6 +8,7 @@ export const ApiProvider = ({ children }) => {
   const { user } = useContext(AppContext);
   const [topEsemenyek, setTopEsemenyek] = useState([]);
   const [esemenyek, setEsemenyek] = useState([]);
+  const [esemenyDatumok, setEsemenyDatumok] = useState([]);
 
   const getAdat = async (vegpont, asyFgv) => {
     try {
@@ -28,15 +29,33 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
+  const getAllEventDates = async (eventId) => {
+    try {
+      const response = await myAxios.get(`/api/all-event-dates/${eventId}`);
+      setEsemenyDatumok([...response.data]);
+    } catch (err) {
+      console.error("Hiba az esemény dátumok lekérdezésekor:", err);
+    }
+  };
+
   useEffect(() => {
     if (user?.id) {
-      getAdat(`/api/topevents/${user?.id}`, setTopEsemenyek);
-      getAdat(`/api/events/${user?.id}`, setEsemenyek);
+      getAdat(`/api/topevents/${user.id}`, setTopEsemenyek);
+      getAdat(`/api/events/${user.id}`, setEsemenyek);
     }
   }, [user?.id]);
 
   return (
-    <ApiContext.Provider value={{ topEsemenyek, esemenyek, postAdat, getAdat }}>
+    <ApiContext.Provider
+      value={{
+        topEsemenyek,
+        esemenyek,
+        esemenyDatumok,
+        getAdat,
+        postAdat,
+        getAllEventDates,
+      }}
+    >
       {children}
     </ApiContext.Provider>
   );

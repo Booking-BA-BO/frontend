@@ -24,6 +24,7 @@ import ModifyEventHost from "./pages/ModifyEventHost";
 import CalendarProfile from "./pages/CalendarProfile";
 import Documentation from "./pages/Documentation";
 import ReservationLayout from "./layouts/ReservationLayout";
+import Reservations from "./components/Reservations";
 
 export default function App() {
   const { user } = useContext(AppContext);
@@ -55,7 +56,7 @@ export default function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/modifyevent/:event_id" element={<ModifyEvent />} />
           <Route path="/event-hosts/:event_id" element={<ModifyEventHost />} />
-          <Route path="/reservations/:event_id" element={<ModifyEvent />} />
+          <Route path="/reservations/:event_id" element={<Reservations />} />
           <Route path="/documentation" element={<Documentation />} />
         </Route>
 

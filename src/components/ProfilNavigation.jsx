@@ -53,11 +53,7 @@ function ProfilNavigation() {
               Naptáram
             </a>
           </li>
-          <li className={activeLink === "settings" ? "active" : "passive"}>
-            <a href="/settings" onClick={() => handleLinkClick("settings")}>
-              Beállítások
-            </a>
-          </li>
+          
         </ul>
       </nav>
       <div className="profil-navigacio-dropdown-kulso">
