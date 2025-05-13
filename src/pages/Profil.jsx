@@ -1,5 +1,6 @@
 import React from "react";
 import ProfilNavigation from "../components/ProfilNavigation";
+import ProfilePictureUpload from "../components/ProfilePictureUpload";
 
 function Profil() {
   return (
@@ -9,7 +10,7 @@ function Profil() {
           <ProfilNavigation/>
           
           <div className="belso">
-            
+            <ProfilePictureUpload />
           </div>
         </div>
       </div>
